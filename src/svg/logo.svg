@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 215 47">
+    <g id="Group_2153" data-name="Group 2153" transform="translate(-895 -36)">
+        <text id="MeshuwebDEV" transform="translate(895 74)" fill="#060b43" fontSize="26" fontFamily="Poppins-Black, Poppins" fontWeight="800">
+            <tspan x="0" y="0">
+                      Meshu
+                    </tspan>
+            <tspan y="0" fontFamily="Poppins-Light, Poppins" fontWeight="300">
+                      web
+                    </tspan>
+            <tspan y="0">DEV</tspan>
+        </text>
+        <g id="Group_2068" data-name="Group 2068" transform="translate(12 5)">
+            <rect id="Rectangle_1076" data-name="Rectangle 1076" width="11" height="11" transform="translate(1044 34)" fill="#4be6c9" />
+            <rect id="Rectangle_1077" data-name="Rectangle 1077" width="11" height="11" transform="translate(1063 34)" fill="#7c49e9" />
+            <rect id="Rectangle_1078" data-name="Rectangle 1078" width="11" height="11" transform="translate(1081 34)" fill="#fd7382" />
+        </g>
+    </g>
+</svg>
