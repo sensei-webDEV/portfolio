@@ -3,29 +3,20 @@ import { Parallax } from "react-scroll-parallax";
 
 const SingularityMockupSVG = () => {
   const [desktopHue, setDesktopHue] = useState("");
-  const [desktopScale, setDesktopScale] = useState("");
-
   const [phoneHue, setPhoneHue] = useState("");
-  const [phoneScale, setPhoneScale] = useState("");
 
   const handleDesktopEnter = () => {
     console.log("desktop enter");
     setDesktopHue("filter animate-hue-rotate");
-    // setDesktopScale(
-    //   "absolute transform -translate-x-8 -translate-y-2 scale-102"
-    // );
   };
   const handleDesktopLeave = () => {
     setDesktopHue("");
-    // setDesktopScale("scale-100");
   };
   const handlePhoneEnter = () => {
     setPhoneHue("filter animate-hue-rotate");
-    // setPhoneScale("absolute transform -translate-y-10 scale-105");
   };
   const handlePhoneLeave = () => {
     setPhoneHue("");
-    setPhoneScale("scale-100");
   };
 
   return (
@@ -33,12 +24,12 @@ const SingularityMockupSVG = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className="4xl:scale-125"
+        className="scale-50 sm:scale-90 lg:scale-70 xl:scale-90 4xl:scale-125"
         width="900"
         height="1437"
         viewBox="0 0 2216 1437"
       >
-        <g id="imac" className={desktopScale}>
+        <g id="imac">
           <image
             id="imac-body"
             className={desktopHue}
@@ -59,7 +50,7 @@ const SingularityMockupSVG = () => {
           />
         </g>
 
-        <g id="phone" className={phoneScale}>
+        <g id="phone">
           <image
             id="iphone-body"
             className={phoneHue}

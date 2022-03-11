@@ -41,7 +41,7 @@ import { useWindowSize } from "react-use";
  *     icons('nodejs', 64)
  */
 export function Icons(icon, width) {
-  const { width: windowWidth, height: windowHeight } = useWindowSize();
+  const { width: windowWidth } = useWindowSize();
 
   //   screens: {
   //   "3xl": "1600px",
@@ -52,7 +52,10 @@ export function Icons(icon, width) {
   const scaling = () => {
     if (windowWidth >= 2000) return 1.5;
     if (windowWidth >= 1600) return 1;
-    return 0.9;
+    if (windowWidth >= 1280) return 1;
+    if (windowWidth >= 1024) return 1;
+    if (windowWidth >= 768) return 1;
+    return 0.85;
   };
 
   switch (icon) {

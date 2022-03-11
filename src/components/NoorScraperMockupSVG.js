@@ -33,7 +33,7 @@ const NoorScraperMockupSVG = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className="4xl:scale-125"
+        className="scale-50 sm:scale-90 lg:scale-70 xl:scale-90 4xl:scale-125"
         width="900"
         height="1437"
         viewBox="0 0 2216 1437"

@@ -1,6 +1,5 @@
 import React from "react";
 import { Icons, ICON_NAMES } from "../svg";
-import { Parallax } from "react-scroll-parallax";
 
 const ProjectsSection = ({
   direction = "ltr",
@@ -25,10 +24,12 @@ const ProjectsSection = ({
 
   if (direction === "ltr")
     return (
-      <div className={`Section px-40 4xl:px-96 h-96 4xl:h-128 w-full `}>
+      <div
+        className={`Section px-7 h-148 w-full flex flex-col sm:block sm:px-22 sm:h-96 lg:flex lg:px-24 lg:h-80 xl:px-28 3xl:px-40 4xl:px-96 4xl:h-128`}
+      >
         {/* Background Dots */}
         <span
-          className="absolute z-0 flex flex-col space-y-4 text-black-200 font-black transform translate-y-72 translate-x-156 4xl:translate-y-96  4xl:left-156"
+          className="absolute z-0 flex flex-col space-y-4 text-black-200 font-black transform translate-y-72 translate-x-156 lg:translate-y-52 lg:translate-x-128 4xl:translate-y-96  4xl:left-156"
           style={{ fontSize: "750px", opacity: "3%" }}
         >
           {Icons(ICON_NAMES.DOTS, 220)}
@@ -36,20 +37,20 @@ const ProjectsSection = ({
         </span>
         {/* bg */}
         <div
-          className={`${determineColor()}  z-0 w-full h-96 4xl:h-128 absolute left-0`}
+          className={`${determineColor()} z-0 w-full h-148 sm:h-80 lg:h-80 4xl:h-128 absolute left-0`}
         ></div>
         {/* Stripe */}
-        <div className="stripe absolute h-11 w-52 4xl:w-64 4xl:h-14 4xl:text-tiny 4xl:px-4 flex justify-start items-center px-3 text-white-100 bg-black-100 text-xs font-poppins font-normal transform rotate-90 -left-4 translate-y-8 4xl:left-36">
-          <span className="transform rotate-180">{stripeText}</span>
+        <div className="stripe absolute flex items-center justify-start px-3 text-white-100 bg-black-100 text-xs font-poppins font-normal transform h-11 w-52 left-4 -translate-y-6 rotate-0 sm:translate-y-8 sm:rotate-90 lg:h-10 lg:w-52 lg:-left-10 xl:-left-6 3xl:-left-4 3xl:translate-y-8 4xl:left-36 4xl:w-64 4xl:h-14 4xl:text-tiny 4xl:px-4">
+          <span className="transform rotate-0 sm:rotate-180">{stripeText}</span>
         </div>
         {/* techs */}
-        <div className="stripe absolute h-10 pr-4 pl-0 flex text-white-100 bg-black-100 text-xs font-normal font-poppins transform rotate-90 translate-y-80 right-12 4xl:right-56 4xl:h-14 4xl:translate-y-124 4xl:text-sm">
-          <div className="sub-techs relative flex justify-center items-center space-x-3.5">
+        <div className="stripe absolute flex text-white-100 bg-black-100 font-normal font-poppins text-4xs pr-2.5 pl-0 h-8 transform rotate-90 translate-y-144 z-50 -right-10 sm:text-4xs sm:pr-2.5 sm:pl-0 sm:h-8 sm:translate-y-64 sm:-right-4 lg:text-4xs lg:pr-2.5 lg:pl-0 lg:h-8 lg:translate-y-64 lg:-right-4 xl:translate-y-80 xl:right-1 3xl:translate-y-80 3xl:right-12 4xl:right-56 4xl:h-14 4xl:translate-y-124 4xl:text-sm">
+          <div className="sub-techs relative flex justify-center items-center space-x-3.5 lg:space-x-3">
             {/* button */}
-            <div className="absolute bg-black-100 z-20 p-1 transform -rotate-90 top-full left-full -translate-x-7 4xl:p-1.5 4xl:-translate-x-9 4xl:-translate-y-1">
+            <div className="absolute bg-black-100 z-20 p-1 transform -rotate-90 top-full left-full -translate-x-7 lg:-translate-y-1.5 lg:p-1.5  4xl:p-1.5 4xl:-translate-x-9 4xl:-translate-y-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 4xl:w-6 4xl:h-6"
+                className="h-4 w-4 lg:w-3.5 lg:h-3.5 4xl:w-6 4xl:h-6"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -78,33 +79,35 @@ const ProjectsSection = ({
           </div>
         </div>
         {/* Content */}
-        <div className="content flex flex-col space-y-10 py-5 flex-shrink max-w-max justify-center items-center 4xl:space-y-16">
+        <div className="content flex flex-col space-y-10 py-12 flex-shrink max-w-max justify-center items-center sm:py-6 sm:space-y-10 lg:py-9 lg:space-y-8 xl:pl-4 4xl:space-y-16">
           {/* title */}
-          <div className="relative h-16 w-32 title text-6xl font-tiempos font-bold self-start ml-8 4xl:ml-10 4xl:text-8xl">
+          <div className="relative h-16 w-32 title text-5xl font-tiempos font-bold self-start ml-15 sm:ml-12 sm:text-6xl lg:ml-12 lg:text-5xl 4xl:ml-10 4xl:text-8xl">
             <span className="absolute whitespace-nowrap text-white-100 opacity-95">
               {title.light}
             </span>
-            <span className="absolute whitespace-nowrap top-1/2 transform 4xl:translate-y-1 4xl:-right-32 -right-1/2 translate-x-3/4 text-black-100">
+            <span className="absolute whitespace-nowrap transform top-5 -right-24 text-black-100 sm:top-1/2 sm:-right-1/2 sm:translate-x-3 lg:-right-1 lg:-translate-y-3 4xl:translate-y-1 4xl:-right-32">
               {title.dark}
             </span>
           </div>
           {/* description */}
-          <p className="text-white-100 z-10 max-w-sm 4xl:max-w-lg 4xl:text-lg 4xl:pt-20 pt-10 content font-poppins font-medium text-tiny leading-tight px-3.5">
+          <p className="text-white-100 z-10 max-w-sm pt-5 content font-poppins font-normal text-sm text-justify leading-tight px-3.5 sm:font-medium sm:pt-10 lg:px-4 lg:font-normal lg:max-w-xs lg:text-xs lg:pt-0 4xl:max-w-lg 4xl:text-lg 4xl:pt-20">
             {description}
           </p>
           {/* buttons */}
-          <div className="flex space-x-4 z-10 justify-around items-center w-full px-2">
+          <div className="flex space-x-2 z-10 justify-around items-center w-full px-3.5 sm:space-x-4 lg:px-4">
             <a
               aria-disabled
-              className={`rounded-md flex justify-center items-center space-x-4 ${
+              className={`rounded-md flex justify-center items-center space-x-2.5 sm:space-x-4 ${
                 links.primary.disabled
                   ? "cursor-not-allowed pointer-events-none bg-gray-200 text-white-100 opacity-80"
                   : "bg-black-100 text-white-200"
-              }  px-6 pt-1 pb-1.5 4xl:pb-2.5`}
+              }  px-4 pt-1 pb-1.5 sm:px-4 lg:px-4 xl:px-6 4xl:pb-2.5`}
               href={links.primary.url}
+              without
+              rel="noreferrer"
               target="_blank"
             >
-              <span className="text-white-200 text-tiny 4xl:text-lg">
+              <span className="text-white-200 text-sm 4xl:text-lg">
                 {links.primary.label}
               </span>
               <svg
@@ -118,8 +121,10 @@ const ProjectsSection = ({
               </svg>
             </a>
             <a
-              className="underline text-white-200 text-tiny 4xl:text-lg"
+              className="underline text-white-200 text-sm xl:text-tiny 4xl:text-lg"
               href={links.secondary.url}
+              without
+              rel="noreferrer"
               target="_blank"
             >
               {links.secondary.label}
@@ -128,9 +133,9 @@ const ProjectsSection = ({
           </div>
         </div>
         {/* Mockup */}
-        <div className="overflow-hidden">
+        <div className="mockup overflow-hidden ">
           <div
-            className="absolute right-0 4xl:right-80 transform"
+            className="absolute transform -right-72 sm:right-0 lg:-right-44 xl:-right-8 4xl:right-80"
             style={{
               transform: mockupTransform ? mockupTransform : "translateY(-60%)",
             }}
@@ -143,7 +148,9 @@ const ProjectsSection = ({
 
   if (direction === "rtl")
     return (
-      <div className={`Section px-40 4xl:px-96 h-96 4xl:h-128 w-full flex`}>
+      <div
+        className={`Section px-7 h-148 w-full flex flex-col sm:block sm:px-22 sm:h-96 lg:flex lg:px-24 lg:h-80 xl:px-28 3xl:px-40 4xl:px-96 4xl:h-128`}
+      >
         {/* Background Dots */}
         <span
           className="absolute z-0 flex flex-col space-y-4 text-black-200 font-black transform translate-y-72 translate-x-40 4xl:translate-y-96  4xl:left-144"
@@ -152,16 +159,19 @@ const ProjectsSection = ({
           {Icons(ICON_NAMES.DOTS)}
           {Icons(ICON_NAMES.DOTS)}
         </span>
+
         {/* bg */}
         <div
-          className={`${determineColor()} z-0 w-full h-96 4xl:h-128 absolute left-0`}
+          className={`${determineColor()} z-0 w-full h-148 sm:h-80 lg:h-80 4xl:h-128 absolute left-0`}
         ></div>
+
         {/* Stripe */}
-        <div className="stripe absolute h-11 w-52 flex justify-start items-center px-3 text-white-100  bg-black-100 text-xs font-poppins font-normal transform rotate-90 -right-4 translate-y-8 4xl:w-64 4xl:h-14 4xl:text-tiny 4xl:px-4 4xl:right-44">
-          <span className="transform rotate-180">{stripeText}</span>
+        <div className="stripe absolute h-11 w-52 flex justify-start items-center px-3 text-white-100 bg-black-100 text-xs font-poppins font-normal transform -translate-y-6 sm:h-10 sm:w-52 sm:rotate-90 sm:-right-4 sm:translate-y-8 lg:h-10 lg:w-52 lg:-right-12 xl:-right-6 3xl:-right-4 3xl:translate-y-8 4xl:w-64 4xl:h-14 4xl:text-tiny 4xl:px-4 4xl:right-44">
+          <span className="transform sm:rotate-180">{stripeText}</span>
         </div>
+
         {/* techs */}
-        <div className="stripe absolute h-10 pr-4 pl-0 flex text-white-100 bg-black-100 text-xs font-normal font-poppins transform rotate-90 translate-y-80 left-12 4xl:left-44 4xl:h-14 4xl:translate-y-124 4xl:text-sm">
+        <div className="stripe absolute flex text-white-100 bg-black-100 font-normal font-poppins transform rotate-90 text-4xs pr-2.5 pl-0 h-8 translate-y-144 z-50 -left-8 sm:text-4xs sm:pr-2.5 sm:translate-y-64 sm:pl-0 sm:h-8 sm:-left-3.5 lg:text-4xs lg:pr-2.5 lg:translate-y-64 lg:pl-0 lg:h-8 lg:-left-3.5 xl:left-1 3xl:left-12 4xl:left-44 4xl:h-14 4xl:translate-y-124 4xl:text-sm">
           <div className="sub-techs relative flex justify-center items-center space-x-3.5">
             {/* button */}
             <div className="absolute bg-black-100 z-20 p-1 transform rotate-90 bottom-full left-full -translate-x-7 4xl:p-1.5 4xl:-translate-x-9 4xl:translate-y-1">
@@ -195,10 +205,11 @@ const ProjectsSection = ({
             </div>
           </div>
         </div>
+
         {/* Mockup */}
-        <div className="overflow-hidden w-full">
+        <div className="mockup overflow-hidden w-full">
           <div
-            className="absolute left-44 transform 4xl:left-128"
+            className="absolute transform -left-48 sm:-left-12 lg:-left-12 xl:left-32 3xl:left-44 4xl:left-128"
             style={{
               transform: mockupTransform ? mockupTransform : "translateY(-36%)",
             }}
@@ -206,14 +217,15 @@ const ProjectsSection = ({
             {mockup}
           </div>
         </div>
+
         {/* Content */}
-        <div className="content flex-shrink-0 flex flex-col space-y-10 py-5 max-w-max justify-center items-center 4xl:space-y-16">
+        <div className="content flex-shrink-0 flex flex-col space-y-10 py-5 max-w-max justify-center items-center lg:py-9 lg:space-y-8 4xl:space-y-16">
           {/* title */}
-          <div className="relative h-16 w-32 title text-6xl font-tiempos font-bold self-start ml-8 4xl:ml-10 4xl:text-8xl">
+          <div className="relative h-16 w-32 title text-6xl font-tiempos font-bold self-start ml-8 lg:ml-12 lg:text-5xl 4xl:ml-10 4xl:text-8xl">
             <span className="absolute whitespace-nowrap text-white-100 opacity-95">
               {title.light}
             </span>
-            <span className="absolute whitespace-nowrap top-1/2 transform -right-1/2 translate-x-3/4 text-black-100 4xl:translate-y-0 4xl:-right-32">
+            <span className="absolute whitespace-nowrap top-1/2 transform -right-1/2 translate-x-3/4 text-black-100 lg:-right-1 lg:-translate-y-4 4xl:translate-y-0 4xl:-right-32">
               {title.dark}
             </span>
           </div>
@@ -221,22 +233,25 @@ const ProjectsSection = ({
           <p
             className={`${
               color === "teal" ? "text-black-100" : "text-white-100"
-            } z-10 max-w-sm pt-10 content font-poppins font-medium text-tiny leading-tight px-3.5 4xl:max-w-lg 4xl:text-lg 4xl:pt-20`}
+            } z-10 max-w-sm pt-10 content font-poppins font-medium text-tiny leading-tight px-3.5 lg:px-4 lg:font-normal lg:max-w-xs lg:text-xs lg:pt-0 4xl:max-w-lg 4xl:text-lg 4xl:pt-20`}
           >
             {description}
           </p>
           {/* buttons */}
-          <div className="flex space-x-4 z-10 justify-around items-center w-full px-2">
+          <div className="flex space-x-2 z-10 justify-around items-center w-full px-3.5 sm:space-x-4 lg:px-4">
             <a
-              className={`rounded-md flex justify-center items-center space-x-4 ${
+              aria-disabled
+              className={`rounded-md flex justify-center items-center space-x-2.5 sm:space-x-4 ${
                 links.primary.disabled
-                  ? "cursor-none bg-gray-200 text-black-200"
+                  ? "cursor-not-allowed pointer-events-none bg-gray-200 text-white-100 opacity-80"
                   : "bg-black-100 text-white-200"
-              }  px-6 pt-1 pb-1.5 4xl:pb-2.5`}
+              }  px-4 pt-1 pb-1.5 sm:px-4 lg:px-4 xl:px-6 4xl:pb-2.5`}
               href={links.primary.url}
+              without
+              rel="noreferrer"
               target="_blank"
             >
-              <span className="text-white-200 text-tiny 4xl:text-lg">
+              <span className="text-white-200 text-sm 4xl:text-lg">
                 {links.primary.label}
               </span>
               <svg
@@ -250,10 +265,10 @@ const ProjectsSection = ({
               </svg>
             </a>
             <a
-              className={`underline ${
-                color === "teal" ? "text-black-100" : "text-white-100"
-              } text-tiny 4xl:text-lg`}
+              className="underline text-white-200 text-sm xl:text-tiny 4xl:text-lg"
               href={links.secondary.url}
+              without
+              rel="noreferrer"
               target="_blank"
             >
               {links.secondary.label}

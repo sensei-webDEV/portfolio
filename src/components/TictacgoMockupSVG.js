@@ -35,7 +35,7 @@ const TictacgoMockupSVG = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className="4xl:scale-125"
+        className="scale-45 transform  sm:scale-90 lg:scale-675 xl:scale-90 4xl:scale-125"
         width="775"
         height="1372"
         viewBox="0 0 1812 1372"

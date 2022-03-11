@@ -1,4 +1,4 @@
-export default {
+const links = {
   REPOS: {
     MAIN: "https://github.com/sensei-webDEV?tab=repositories",
     SINGULARITY: "https://github.com/sensei-webDEV/singularity-client",
@@ -11,3 +11,5 @@ export default {
     NOOR_SCRAPER: "https://noor-scraper.com",
   },
 };
+
+export default links;
