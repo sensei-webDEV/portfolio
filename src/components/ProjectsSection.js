@@ -149,7 +149,7 @@ const ProjectsSection = ({
   if (direction === "rtl")
     return (
       <div
-        className={`Section px-7 h-148 w-full flex flex-col sm:block sm:px-22 sm:h-96 lg:flex lg:px-24 lg:h-80 xl:px-28 3xl:px-40 4xl:px-96 4xl:h-128`}
+        className={`Section px-7 h-148 w-full flex flex-col justify-end sm:block sm:px-22 sm:h-96 lg:flex lg:px-24 lg:h-80 xl:px-28 3xl:px-40 4xl:px-96 4xl:h-128`}
       >
         {/* Background Dots */}
         <span
@@ -166,7 +166,7 @@ const ProjectsSection = ({
         ></div>
 
         {/* Stripe */}
-        <div className="stripe absolute h-11 w-52 flex justify-start items-center px-3 text-white-100 bg-black-100 text-xs font-poppins font-normal transform -translate-y-6 sm:h-10 sm:w-52 sm:rotate-90 sm:-right-4 sm:translate-y-8 lg:h-10 lg:w-52 lg:-right-12 xl:-right-6 3xl:-right-4 3xl:translate-y-8 4xl:w-64 4xl:h-14 4xl:text-tiny 4xl:px-4 4xl:right-44">
+        <div className="stripe absolute h-11 w-52 justify-start hidden sm:flex items-center px-3 text-white-100 bg-black-100 text-xs font-poppins font-normal transform -translate-y-6 sm:h-10 sm:w-52 sm:rotate-90 sm:-right-4 sm:translate-y-8 lg:h-10 lg:w-52 lg:-right-12 xl:-right-6 3xl:-right-4 3xl:translate-y-8 4xl:w-64 4xl:h-14 4xl:text-tiny 4xl:px-4 4xl:right-44">
           <span className="transform sm:rotate-180">{stripeText}</span>
         </div>
 
@@ -209,7 +209,7 @@ const ProjectsSection = ({
         {/* Mockup */}
         <div className="mockup overflow-hidden w-full">
           <div
-            className="absolute transform -left-48 sm:-left-12 lg:-left-12 xl:left-32 3xl:left-44 4xl:left-128"
+            className="absolute transform -left-36 sm:-left-12 lg:-left-12 xl:left-32 3xl:left-44 4xl:left-128"
             style={{
               transform: mockupTransform ? mockupTransform : "translateY(-36%)",
             }}
@@ -219,13 +219,13 @@ const ProjectsSection = ({
         </div>
 
         {/* Content */}
-        <div className="content flex-shrink-0 flex flex-col space-y-10 py-5 max-w-max justify-center items-center lg:py-9 lg:space-y-8 4xl:space-y-16">
+        <div className="content flex-shrink-0 flex flex-col space-y-16 pt-5 pb-14 max-w-max justify-center items-center lg:py-9 lg:space-y-8 4xl:space-y-16">
           {/* title */}
           <div className="relative h-16 w-32 title text-6xl font-tiempos font-bold self-start ml-8 lg:ml-12 lg:text-5xl 4xl:ml-10 4xl:text-8xl">
             <span className="absolute whitespace-nowrap text-white-100 opacity-95">
               {title.light}
             </span>
-            <span className="absolute whitespace-nowrap top-1/2 transform -right-1/2 translate-x-3/4 text-black-100 lg:-right-1 lg:-translate-y-4 4xl:translate-y-0 4xl:-right-32">
+            <span className="absolute whitespace-nowrap top-4 transform -right-16 translate-x-3/4 text-black-100 lg:-right-1 lg:-translate-y-4 4xl:translate-y-0 4xl:-right-32">
               {title.dark}
             </span>
           </div>
@@ -233,7 +233,7 @@ const ProjectsSection = ({
           <p
             className={`${
               color === "teal" ? "text-black-100" : "text-white-100"
-            } z-10 max-w-sm pt-10 content font-poppins font-medium text-tiny leading-tight px-3.5 lg:px-4 lg:font-normal lg:max-w-xs lg:text-xs lg:pt-0 4xl:max-w-lg 4xl:text-lg 4xl:pt-20`}
+            } z-10 max-w-sm pt-7 content font-poppins font-medium text-tiny leading-tight px-3.5 lg:px-4 lg:font-normal lg:max-w-xs lg:text-xs lg:pt-0 4xl:max-w-lg 4xl:text-lg 4xl:pt-20`}
           >
             {description}
           </p>

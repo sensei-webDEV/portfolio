@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import Card from "./components/Card";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { ICON_NAMES, Icons } from "./svg";
@@ -8,11 +9,21 @@ import Theme from "./Theme";
 import TEXTS from "./content/texts";
 import LINKS from "./content/links";
 import ProjectsSection from "./components/ProjectsSection";
-import SingularityMockupSVG from "./components/SingularityMockupSVG";
-import TictacgoMockupSVG from "./components/TictacgoMockupSVG";
-import NoorScraperMockupSVG from "./components/NoorScraperMockupSVG";
 import { useWindowSize, useIntersection } from "react-use";
 import { Parallax } from "react-scroll-parallax";
+
+// Images
+const SingularityMockupSVG = lazy(() =>
+  import("./components/SingularityMockupSVG")
+);
+const TictacgoMockupSVG = lazy(() => import("./components/TictacgoMockupSVG"));
+const NoorScraperMockupSVG = lazy(() =>
+  import("./components/NoorScraperMockupSVG")
+);
+
+// import SingularityMockupSVG from "./components/SingularityMockupSVG";
+// import TictacgoMockupSVG from "./components/TictacgoMockupSVG";
+// import NoorScraperMockupSVG from "./components/NoorScraperMockupSVG";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -61,7 +72,7 @@ function App() {
     if (windowWidth >= 2000) return "translate(-0%, -31%)";
     if (windowWidth >= 1280) return "translate(-0%, -33%)";
     if (windowWidth >= 1024) return "translate(-0%, -34%)";
-    return "translate(-0%, -10%)";
+    return "translate(-0%, -59%)";
   };
 
   useEffect(() => {
@@ -430,7 +441,11 @@ function App() {
                       url: LINKS.REPOS.SINGULARITY,
                     },
                   }}
-                  mockup={<SingularityMockupSVG />}
+                  mockup={
+                    <Suspense fallback={<span>Loading...</span>}>
+                      <SingularityMockupSVG />
+                    </Suspense>
+                  }
                   mockupTransform={determineSingularityTransform()}
                 />
               </div>
@@ -450,7 +465,11 @@ function App() {
                     url: LINKS.REPOS.TIC_TAC_GO,
                   },
                 }}
-                mockup={<TictacgoMockupSVG />}
+                mockup={
+                  <Suspense fallback={<span>Loading...</span>}>
+                    <TictacgoMockupSVG />
+                  </Suspense>
+                }
                 mockupTransform={determineTicTransform()}
               />
               <ProjectsSection
@@ -469,7 +488,11 @@ function App() {
                     url: LINKS.REPOS.NOOR_SCRAPER,
                   },
                 }}
-                mockup={<NoorScraperMockupSVG />}
+                mockup={
+                  <Suspense fallback={<span>Loading...</span>}>
+                    <NoorScraperMockupSVG />
+                  </Suspense>
+                }
                 mockupTransform={determineNoorTransform()}
               />
 

@@ -50,7 +50,7 @@ const SingularityMockupSVG = () => {
           />
         </g>
 
-        <g id="phone">
+        <g id="phone" className={`hidden sm:visible`}>
           <image
             id="iphone-body"
             className={phoneHue}
