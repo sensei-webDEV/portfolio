@@ -11,6 +11,7 @@ import LINKS from "./content/links";
 import ProjectsSection from "./components/ProjectsSection";
 import { useWindowSize, useIntersection } from "react-use";
 import { Parallax } from "react-scroll-parallax";
+import SideMenu from "./components/SideMenu";
 
 // Images
 const SingularityMockupSVG = lazy(() =>
@@ -31,6 +32,7 @@ function App() {
   const { width: windowWidth } = useWindowSize();
   const [activeStep, setActiveStep] = useState(0);
   const [scroll, setScroll] = useState(window.scrollY);
+
   const [intersected, setIntersected] = useState(false);
   const maxSteps = 3;
 
@@ -75,6 +77,11 @@ function App() {
     return "translate(-0%, -59%)";
   };
 
+  const isMobile = () => {
+    if (windowWidth >= 440) return false;
+    return true;
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", (e) => handleNavigation(e));
 
@@ -84,7 +91,6 @@ function App() {
   });
 
   useEffect(() => {
-    console.log(intersection);
     setIntersected(!(intersection && intersection.intersectionRatio < 1));
   }, [intersection]);
 
@@ -116,8 +122,17 @@ function App() {
 
         {/* Navbar */}
         <header className="">
+          <div
+            className={`sidemenu md:hidden animate-side-to-up z-999 fixed ${
+              !intersected
+                ? "animate-side-to-up"
+                : "animate-up-to-side -left-10 top-10"
+            }`}
+          >
+            <SideMenu intersected={!intersected} />
+          </div>
           <nav
-            className={`py-2 w-full z-50 bg-white-200 ${
+            className={`hidden md:visible py-2 w-full z-50 bg-white-200 ${
               intersected ? "" : "shadow-md fixed"
             }`}
           >
@@ -160,7 +175,7 @@ function App() {
 
         <main
           className="bg-white-200 flex flex-col space-y-80"
-          style={{ paddingTop: !intersected ? "62.5px" : "0px" }}
+          style={{ paddingTop: !intersected && !isMobile() ? "62.5px" : "0px" }}
         >
           {/* Hero */}
           <section className="hero relative px-4 sm:h-screen flex flex-col justify-between items-center leading-none text-black-100 sm:justify-between sm:px-28 sm:flex-row lg:px-12 xl:px-20 3xl:px-32 4xl:px-80">
@@ -173,7 +188,7 @@ function App() {
             </span>
 
             {/* Left-side container */}
-            <div className="left flex flex-col h-screen items-center justify-center space-y-14 sm:items-start lg:pl-4">
+            <div className="hero-text pb-28 flex flex-col h-screen items-center justify-center space-y-14 sm:items-start lg:pl-4">
               {/* Text  */}
               <div className="Text flex flex-col space-y-3 max-w-min">
                 <h1 className="text-10xl font-tiempos font-black leading-none -mb-10 flex-grow-0 max-w-min lg:text-10xl xl:text-12xl  3xl:text-12xl 4xl:text-16xl">
@@ -198,7 +213,7 @@ function App() {
                 <div className="design relative">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-17 sm:w-18 lg:w-20 xl:w-20 3xl:w-28 4xl:w-32"
+                    className="w-18 sm:w-18 lg:w-20 xl:w-20 3xl:w-28 4xl:w-32"
                     viewBox="0 0 150 330"
                   >
                     <g id="Design" transform="translate(-1688 1819)">
@@ -264,7 +279,7 @@ function App() {
                 <div className="develop -mt-1.5 sm:-mt-1.5 lg:-mt-1.5 xl:-mt-1.5 3xl:-mt-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-20 sm:w-24 lg:w-22 xl:w-24 3xl:w-28 4xl:w-36"
+                    className="w-22 sm:w-24 lg:w-22 xl:w-24 3xl:w-28 4xl:w-36"
                     viewBox="0 0 177 53"
                   >
                     <g
@@ -302,10 +317,10 @@ function App() {
                   </svg>
                 </div>
                 {/* Deploy */}
-                <div className="deploy -mt-3 sm:-mt-4 lg:-mt-4 xl:-mt-4 3xl:-mt-5">
+                <div className="deploy -mt-3.5 sm:-mt-4 lg:-mt-4 xl:-mt-4 3xl:-mt-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-16 sm:w-20 lg:w-18 xl:w-20 3xl:w-24 4xl:w-28"
+                    className="w-18 sm:w-20 lg:w-18 xl:w-20 3xl:w-24 4xl:w-28"
                     viewBox="0 0 150 113.999"
                   >
                     <g
@@ -346,7 +361,7 @@ function App() {
             </div>
 
             {/* Right-side container */}
-            <div className="right flex flex-col justify-center items-center relative">
+            <div className="hero-cards flex flex-col justify-center items-center relative">
               {/* Background Dots */}
               <span
                 className="absolute z-0 text-black-200 font-black scale-85 -left-8 -top-10 sm:left-0 sm:top-0 sm:scale-100"
@@ -354,17 +369,16 @@ function App() {
               >
                 {Icons(ICON_NAMES.DOTS)}
               </span>
-              <div className="px-10 py-2 max-w-md sm:max-w-lg lg:px-2 lg:max-w-sm xl:max-w-lg 4xl:px-14 4xl:max-w-3xl">
+              <div className="px-16 py-2 max-w-lg sm:max-w-lg lg:px-2 lg:max-w-sm xl:max-w-lg 4xl:px-14 4xl:max-w-3xl">
                 <AutoPlaySwipeableViews
-                  interval={6000}
+                  interval={600000}
                   axis={"x"}
                   index={activeStep}
                   onChangeIndex={handleStepChange}
                   enableMouseEvents
                 >
                   <Card
-                    titleBack="Back"
-                    titleFront="end"
+                    title={Icons(ICON_NAMES.BACKEND_TITLE, 250)}
                     content={TEXTS.BACKEND_CONTENT.en}
                     stripeText="Development"
                     right={handleNext}
@@ -376,8 +390,7 @@ function App() {
                     ]}
                   />
                   <Card
-                    titleBack="Front"
-                    titleFront="end"
+                    title={Icons(ICON_NAMES.FRONTEND_TITLE, 250)}
                     content={TEXTS.FRONTEND_CONTENT.en}
                     stripeText="Development"
                     right={handleNext}
@@ -389,8 +402,7 @@ function App() {
                     ]}
                   />
                   <Card
-                    titleBack="UI"
-                    titleFront="UX"
+                    title={Icons(ICON_NAMES.UIUX_TITLE, 150)}
                     condensed
                     content={TEXTS.UIUX_CONTENT.en}
                     stripeText="Design"
@@ -417,16 +429,16 @@ function App() {
             {/* Background projects */}
             <Parallax speed={7}>
               <span
-                className="absolute select-none z-0 text-black-200 font-black font-tiempos transform left-0 -translate-y-2/3 "
-                style={{ fontSize: "350px", opacity: "3%" }}
+                className="projects-bg-text absolute transform select-none z-0 text-11xl text-black-200 font-black font-tiempos left-10 -top-10 -translate-y-3/4 -translate-x-1/4"
+                style={{ opacity: "4%" }}
               >
-                Projects
+                Work
               </span>
             </Parallax>
-            <div className="flex flex-col space-y-144 scroll-mt-60" id="work">
+            <div className="flex flex-col space-y-80 scroll-mt-60" id="work">
               <div className="scroll-mt-60" id="work">
                 <ProjectsSection
-                  title={{ light: "Singu", dark: "larity" }}
+                  title={Icons(ICON_NAMES.SINGULARITY_TITLE, 300)}
                   stripeText="design / develop / deploy"
                   description={TEXTS.SINGULARITY_CONTENT.en}
                   color="pink"
@@ -446,13 +458,13 @@ function App() {
                       <SingularityMockupSVG />
                     </Suspense>
                   }
-                  mockupTransform={determineSingularityTransform()}
+                  // mockupTransform={determineSingularityTransform()}
                 />
               </div>
               <ProjectsSection
                 direction="rtl"
-                title={{ light: "Tic-tac", dark: "-go" }}
                 stripeText="design / develop / deploy"
+                title={Icons(ICON_NAMES.TICTACGO_TITLE, 300)}
                 description={TEXTS.TICTACGO_CONTENT.en}
                 color="teal"
                 links={{
@@ -474,8 +486,8 @@ function App() {
               />
               <ProjectsSection
                 direction="ltr"
-                title={{ light: "NOOR", dark: "scraper" }}
                 stripeText="design / develop / deploy"
+                title={Icons(ICON_NAMES.NOOR_TITLE, 300)}
                 description={TEXTS.NOOR_SCRAPER_CONTENT.en}
                 color="purple"
                 links={{
@@ -501,18 +513,18 @@ function App() {
                 <a
                   href={LINKS.REPOS.MAIN}
                   target="_blank"
-                  className="-mt-72 text-2xl font-poppins font-semibold underline text-black-100 4xl:text-4xl"
+                  className="-mt-72 text-1xl font-poppins font-semibold underline text-black-100 4xl:text-4xl"
                 >
                   More projects @GitHub..
                 </a>
                 <div
                   style={{ height: "2px" }}
-                  className="w-64 4xl:w-122 bg-black-200 bg-opacity-10 opacity-90 shadow-line"
+                  className="w-1/2 4xl:w-122 bg-black-200 bg-opacity-10 opacity-20 shadow-line"
                 />
               </section>
               {/* Technologies and tools */}
-              <section>
-                <div className="">
+              <section className="techs-tools">
+                <div className="-mt-40">
                   {Icons(ICON_NAMES.DIVIDER_TECHS_TOP, 1920)}
                 </div>
 
@@ -535,27 +547,27 @@ function App() {
                     <span>& Tools</span>
                   </span>
                   {/* Icons */}
-                  <div className="flex w-2/3 h-96 flex-wrap items-end space-x-10 justify-center transform scale-125">
-                    {Icons(ICON_NAMES.NODEJS_WHITE, 80)}
+                  <div className="flex w-2/3 h-96 flex-wrap items-center space-x-4 justify-around transform scale-125">
+                    {Icons(ICON_NAMES.NODEJS_WHITE, 75)}
                     {Icons(ICON_NAMES.EXPRESS_WHITE, 80)}
                     {Icons(ICON_NAMES.MONGODB_WHITE, 90)}
-                    {Icons(ICON_NAMES.SOCKET_IO, 60)}
-                    {Icons(ICON_NAMES.SEND_GRID, 70)}
-                    {Icons(ICON_NAMES.PASSPORT_WHITE, 25)}
+                    {Icons(ICON_NAMES.SOCKET_IO, 55)}
+                    {Icons(ICON_NAMES.SEND_GRID, 80)}
+                    {Icons(ICON_NAMES.PASSPORT_WHITE, 30)}
                     {Icons(ICON_NAMES.STRAPI, 60)}
                     {Icons(ICON_NAMES.REDIS, 90)}
-                    {Icons(ICON_NAMES.POSTMAN, 110)}
+                    {Icons(ICON_NAMES.POSTMAN, 100)}
                     {Icons(ICON_NAMES.REACTJS, 45)}
-                    {Icons(ICON_NAMES.TAILWIND_WHITE, 95)}
-                    {Icons(ICON_NAMES.JAVASCRIPT, 40)}
-                    {Icons(ICON_NAMES.BOOTSTRAP, 50)}
-                    {Icons(ICON_NAMES.XD, 45)}
-                    {Icons(ICON_NAMES.ILLUSTRATOR, 45)}
-                    {Icons(ICON_NAMES.PHOTOSHOP, 45)}
-                    {Icons(ICON_NAMES.GITHUB, 40)}
-                    {Icons(ICON_NAMES.DIGITAL_OCEAN, 75)}
-                    {Icons(ICON_NAMES.AWS, 70)}
-                    {Icons(ICON_NAMES.HEROKU, 130)}
+                    {Icons(ICON_NAMES.TAILWIND_WHITE, 85)}
+                    {Icons(ICON_NAMES.JAVASCRIPT, 38)}
+                    {Icons(ICON_NAMES.BOOTSTRAP, 45)}
+                    {Icons(ICON_NAMES.XD, 40)}
+                    {Icons(ICON_NAMES.ILLUSTRATOR, 40)}
+                    {Icons(ICON_NAMES.PHOTOSHOP, 40)}
+                    {Icons(ICON_NAMES.GITHUB, 35)}
+                    {Icons(ICON_NAMES.DIGITAL_OCEAN, 70)}
+                    {Icons(ICON_NAMES.AWS, 60)}
+                    {Icons(ICON_NAMES.HEROKU, 110)}
                   </div>
                 </div>
                 <div className="-scroll-mt-96" id="contact">
@@ -563,14 +575,16 @@ function App() {
                 </div>
               </section>
               {/* Contact */}
-              <section className="contact flex flex-col space-y-16 justify-center items-center pb-64">
-                <div className="text-17xl 4xl:text-19xl font-tiempos text-black-100 font-black -mt-96">
+              <section className="contact flex flex-col space-y-16 justify-center items-center pb-52">
+                <div className="text-8xl 4xl:text-19xl font-tiempos text-black-100 font-black -mt-28">
                   Contact
                 </div>
-                <div className="flex flex-col text-2xl text-black-100 justify-center items-center 4xl:text-4xl">
-                  <span>contact@meshu-web.dev</span>
-                  <span>+971 589 978 970</span>
-                  <span>Meshari Sulaiman</span>
+                <div className="flex flex-col text-xl text-black-100 justify-center items-center 4xl:text-4xl">
+                  <a href="mailto:meshari@meshu-web.dev">
+                    contact@meshu-web.dev
+                  </a>
+                  <a href="tel:+971589978970">+971 589 978 970</a>
+                  <span className="font-medium">Meshari Sulaiman</span>
                 </div>
               </section>
             </div>

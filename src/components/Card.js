@@ -1,8 +1,7 @@
 import React from "react";
 
 const Card = ({
-  titleBack,
-  titleFront,
+  title = "",
   content,
   icons = [],
   stripeText,
@@ -11,9 +10,9 @@ const Card = ({
   condensed = false,
 }) => {
   return (
-    <div className="relative card-container px-8 pt-5 pb-8 m-5 rounded-md bg-white-100 drop-shadow-md flex flex-col space-y-8 items-center lg:space-y-6 xl:space-y-7 4xl:m-8 4xl:px-8 4xl:pt-8 4xl:pb-12 4xl:space-y-14">
+    <div className="relative card-container flex flex-col space-y-4 items-center justify-between h-124 px-8 py-8 m-5 rounded-md bg-white-100 drop-shadow-md">
       {/* Stripe */}
-      <div className="stripe absolute h-7 w-40 flex justify-start items-center px-3 text-white-100 text-xs font-poppins font-light transform rotate-90 left-0 -translate-x-1/2 bg-teal-200 translate-y-3/4 4xl:h-10 4xl:w-48 4xl:px-4 4xl:text-lg 4xl:font-normal">
+      <div className="stripe absolute transform h-7 w-40 px-3 flex justify-start items-center text-sm font-poppins font-normal text-white-100 bg-teal-200 rotate-90 top-12 -left-20">
         {stripeText}
       </div>
 
@@ -57,28 +56,11 @@ const Card = ({
         </div>
       )}
 
-      {/* Title */}
-      {condensed ? (
-        <div className="relative h-16 title w-16 font-tiempos font-bold self-start text-5xl ml-20 sm:text-6xl lg:text-6xl lg:ml-16 xl:text-6xl xl:ml-24 3xl:ml-20 3xl:text-6xl 4xl:w-24 4xl:text-8xl 4xl:h-24">
-          <span className="absolute text-gray-200 opacity-30">{titleBack}</span>
-          <span className="absolute transform text-gray-200 translate-x-9 top-5 lg:-right-1/2 lg:translate-x-10 lg:top-4 xl:top-4 xl:-right-1/2 xl:translate-x-10 3xl:top-1/2 3xl:-translate-y-5 3xl:-right-1/2 3xl:translate-x-1/2 4xl:-translate-y-4 4xl:translate-x-16">
-            {titleFront}
-          </span>
-        </div>
-      ) : (
-        <div className="relative h-16 w-32 title font-tiempos font-bold self-start ml-12 text-5xl sm:text-4xl lg:text-5xl xl:text-6xl 3xl:text-6xl 4xl:h-24 4xl:text-7xl 4xl:ml-36">
-          <span className="absolute text-gray-200 opacity-30">{titleBack}</span>
-          <span className="absolute text-gray-200 top-1/2 transform -translate-y-5 translate-x-20 sm:top-1/2 sm:transform sm:-translate-y-1/3 sm:-right-1/2 sm:translate-x-1/2 lg:-translate-x-4 lg:-translate-y-4">
-            {titleFront}
-          </span>
-        </div>
-      )}
+      {/* title */}
+      <div className="title px-3">{title}</div>
 
       {/* Description */}
-      <div
-        className="content font-poppins font-medium text-justify text-sm pt-2 leading-tight px-3.5 sm:text-tiny lg:px-4 lg:text-xs xl:px-5 xl:text-sm 4xl:text-lg 4xl:px-0 max-w-xs 4xl:max-w-md"
-        style={{ minHeight: "122px" }}
-      >
+      <div className="content font-poppins font-normal text-sm leading-tight text-justify pt-2 px-3.5">
         {content}
       </div>
 

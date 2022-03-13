@@ -11,7 +11,7 @@ module.exports = {
         "5xl": "2400px",
       },
       boxShadow: {
-        line: "0 3px 7px rgb(0 0 0 / 30%)",
+        line: "0 3px 7px rgb(0 0 0 / 40%)",
       },
       keyframes: {
         "hue-rotate": {
@@ -19,8 +19,18 @@ module.exports = {
           "50%": { filter: "hue-rotate(180deg)" },
           "100%": { filter: "hue-rotate(0deg)" },
         },
-      },
-      keyframes: {
+        "side-to-up": {
+          "0%": { left: "-40px", top: "40px" },
+          "25%": { left: "-999px", top: "40px" },
+          "50%": { left: "-999px", top: "-999px" },
+          "100%": { right: "50px", top: "0px" },
+        },
+        "up-to-side": {
+          "0%": { right: "50px", top: "0px" },
+          "25%": { right: "40px", top: "-999px" },
+          "50%": { left: "-999px", top: "40px" },
+          "100%": { left: "0px", top: "40px" },
+        },
         "scale-105": {
           "0%": { transform: "scale(1.0)" },
           "50%": { transform: "scale(1.02)" },
@@ -30,6 +40,8 @@ module.exports = {
       animation: {
         "hue-rotate": "hue-rotate 2.5s ease-in-out infinite",
         "scale-105": "scale-105 0.25s ease-in-out",
+        "side-to-up": "side-to-up 0.50s ease-in-out 1 forwards",
+        "up-to-side": "up-to-side 0.50s ease-in-out 1 forwards",
       },
       scale: {
         35: "0.35",

@@ -8,11 +8,21 @@
   transition: box-shadow 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
 
-  /* outline: 1px solid rgba(255, 0, 0, 0.283); */
+  /* outline: 1px solid rgba(0, 255, 17, 0.496); */
 }
 
 .smooth-scrolling {
   scroll-behavior: smooth;
+}
+
+.palette-gradient {
+  background: rgb(75, 230, 201);
+  background: linear-gradient(
+    324deg,
+    rgba(75, 230, 201, 1) 0%,
+    rgba(253, 115, 130, 1) 50%,
+    rgba(124, 73, 233, 1) 100%
+  );
 }
 
 @font-face {

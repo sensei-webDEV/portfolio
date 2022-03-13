@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295 111">
+	<g transform="translate(-335 -115)">
+		<text transform="translate(335 178)" fill="#f1f1f4" font-size="80" font-family="TiemposHeadlineTest-Bold, Tiempos Headline Test" font-weight="700" letter-spacing="0.024em">
+			<tspan x="0" y="0">
+				Back
+			</tspan>
+		</text>
+		<text transform="translate(479 209)" fill="#828495" font-size="80" font-family="TiemposHeadlineTest-Bold, Tiempos Headline Test" font-weight="700" letter-spacing="0.024em">
+			<tspan x="0" y="0">
+				end
+			</tspan>
+		</text>
+	</g>
+</svg>

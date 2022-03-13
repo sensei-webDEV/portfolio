@@ -27,6 +27,13 @@ import { ReactComponent as IconGithub } from "./github.svg";
 import { ReactComponent as IconDigitalOcean } from "./digital-ocean.svg";
 import { ReactComponent as IconAWS } from "./aws.svg";
 import { ReactComponent as IconHeroku } from "./heroku.svg";
+import { ReactComponent as IconSingularityTitle } from "./singularity-title.svg";
+import { ReactComponent as IconTicTacGoTitle } from "./tictacgo-title.svg";
+import { ReactComponent as IconNoorTitle } from "./noor-title.svg";
+import { ReactComponent as IconBackendTitle } from "./backend-title.svg";
+import { ReactComponent as IconFrontendTitle } from "./frontend-title.svg";
+import { ReactComponent as IconUIUXTitle } from "./uiux-title.svg";
+
 import { useWindowSize } from "react-use";
 
 /**
@@ -61,6 +68,18 @@ export function Icons(icon, width) {
   switch (icon) {
     case "LOGO":
       return <IconLogo width={(width * scaling()).toString()} />;
+    case "SINGULARITY_TITLE":
+      return <IconSingularityTitle width={(width * scaling()).toString()} />;
+    case "TICTACGO_TITLE":
+      return <IconTicTacGoTitle width={(width * scaling()).toString()} />;
+    case "NOOR_TITLE":
+      return <IconNoorTitle width={(width * scaling()).toString()} />;
+    case "BACKEND_TITLE":
+      return <IconBackendTitle width={(width * scaling()).toString()} />;
+    case "FRONTEND_TITLE":
+      return <IconFrontendTitle width={(width * scaling()).toString()} />;
+    case "UIUX_TITLE":
+      return <IconUIUXTitle width={(width * scaling()).toString()} />;
     case "NODEJS_WHITE":
       return <IconNodejsWhite width={(width * scaling()).toString()} />;
     case "TAILWIND_WHITE":
@@ -125,6 +144,12 @@ export function Icons(icon, width) {
 export const ICON_NAMES = {
   SEND_GRID: "SEND_GRID",
   REDIS: "REDIS",
+  SINGULARITY_TITLE: "SINGULARITY_TITLE",
+  TICTACGO_TITLE: "TICTACGO_TITLE",
+  NOOR_TITLE: "NOOR_TITLE",
+  BACKEND_TITLE: "BACKEND_TITLE",
+  FRONTEND_TITLE: "FRONTEND_TITLE",
+  UIUX_TITLE: "UIUX_TITLE",
   HEROKU: "HEROKU",
   PASSPORT_WHITE: "PASSPORT_WHITE",
   AWS: "AWS",
