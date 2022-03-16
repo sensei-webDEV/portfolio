@@ -587,7 +587,7 @@ function App() {
                   <a href="mailto:meshari@meshu-web.dev">
                     contact@meshu-web.dev
                   </a>
-                  <a href="tel:+971589978970">+971 589 978 970</a>
+                  <a href="tel:+971589978970">+971 524 527 823</a>
                   <span className="font-medium">Meshari Sulaiman</span>
                 </div>
               </section>
