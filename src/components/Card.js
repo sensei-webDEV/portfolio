@@ -10,9 +10,9 @@ const Card = ({
   condensed = false,
 }) => {
   return (
-    <div className="relative card-container flex flex-col space-y-4 items-center justify-between h-124 px-8 py-8 m-5 rounded-md bg-white-100 drop-shadow-md">
+    <div className="relative card-container flex flex-col space-y-4 items-center justify-between h-124 px-8 py-8 m-5 rounded-md bg-white-100 drop-shadow-md lg:h-119 4xl:h-126 4xl:w-[92%]">
       {/* Stripe */}
-      <div className="stripe absolute transform h-7 w-40 px-3 flex justify-start items-center text-sm font-poppins font-normal text-white-100 bg-teal-200 rotate-90 top-12 -left-20">
+      <div className="stripe absolute transform h-7 w-40 px-3 flex justify-start items-center text-sm font-poppins font-normal text-white-100 bg-teal-200 rotate-90 top-12 -left-20 ">
         {stripeText}
       </div>
 
@@ -60,7 +60,7 @@ const Card = ({
       <div className="title px-3">{title}</div>
 
       {/* Description */}
-      <div className="content font-poppins font-normal text-sm leading-tight text-justify pt-2 px-3.5">
+      <div className="content font-poppins font-normal text-sm leading-tight text-justify pt-2 px-3.5 lg:text-xs 3.5xl:text-sm 4xl:text-tiny">
         {content}
       </div>
 

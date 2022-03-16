@@ -28,7 +28,7 @@ const SingularityMockupSVG = () => {
   };
 
   return (
-    <div className="scale-60">
+    <div className="scale-55 sm:scale-65 md:scale-70 lg:scale-75 2xl:scale-80 3.5xl:scale-90 4xl:scale-105">
       <Parallax translateY={[-10, 3]}>
         {isMobile() ? (
           <svg

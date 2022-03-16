@@ -57,10 +57,13 @@ export function Icons(icon, width) {
   // },
 
   const scaling = () => {
+    if (windowWidth >= 2400) return 1.5;
     if (windowWidth >= 2000) return 1.5;
-    if (windowWidth >= 1600) return 1;
+    if (windowWidth >= 1800) return 1.125;
+    if (windowWidth >= 1600) return 1.1;
+    if (windowWidth >= 1536) return 1.1;
     if (windowWidth >= 1280) return 1;
-    if (windowWidth >= 1024) return 1;
+    if (windowWidth >= 1024) return 0.85;
     if (windowWidth >= 768) return 1;
     return 0.85;
   };

@@ -87,7 +87,7 @@ const SideMenu = ({ intersected }) => {
               toggleDrawer(false, e, "work");
             }}
             href="#work"
-            className="flex flex-col justify-start self-center items-center space-y-2 py-4 pl-8 text-xs font-normal font-poppins text-white-100"
+            className="flex flex-col justify-start self-center items-center space-y-2 py-4 pl-7 text-2xs font-normal font-poppins text-white-100"
           >
             <span>
               <svg
@@ -111,7 +111,7 @@ const SideMenu = ({ intersected }) => {
               toggleDrawer(false, e, "technologies");
             }}
             href="#technologies"
-            className="flex flex-col justify-start self-center items-center space-y-2 py-4 pl-8 text-xs font-normal font-poppins text-white-100"
+            className="flex flex-col justify-start self-center items-center space-y-2 py-4 pl-7 text-2xs font-normal font-poppins text-white-100"
           >
             <span>
               <svg
@@ -134,7 +134,7 @@ const SideMenu = ({ intersected }) => {
               toggleDrawer(false, e, "contact");
             }}
             href="#contact"
-            className="flex flex-col justify-start self-center items-center space-y-2 py-4 pl-8 text-xs font-normal font-poppins text-white-100"
+            className="flex flex-col justify-start self-center items-center space-y-2 py-4 pl-7 text-2xs font-normal font-poppins text-white-100"
           >
             <span>
               <svg
@@ -151,7 +151,7 @@ const SideMenu = ({ intersected }) => {
           <a
             href="/Resume.pdf"
             download
-            className="flex flex-col justify-start self-center items-center space-y-2 py-4 px-8 text-xs font-normal font-poppins text-white-100"
+            className="flex flex-col justify-start self-center items-center space-y-2 py-4 px-7 text-2xs font-normal font-poppins text-white-100"
           >
             <span>
               <svg

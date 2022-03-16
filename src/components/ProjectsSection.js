@@ -22,21 +22,55 @@ const ProjectsSection = ({
     if (color === "teal") return "bg-teal-100";
   };
 
+  /**
+   *
+   * @param {String} stripe "tech" or "tags"
+   * @returns css position
+   */
+  const determineStripesPosition = (stripe) => {
+    switch (stripe) {
+      case "tech":
+        if (direction === "ltr")
+          return "-right-7 translate-y-28 2xl:right-5 2xl:translate-y-32 3xl:translate-y-48 3xl:right-72";
+        if (direction === "rtl")
+          return "-left-7 translate-y-28 2xl:left-5 2xl:translate-y-32 3xl:translate-y-48 3xl:left-72";
+      case "tags":
+        if (direction === "ltr")
+          return "-left-14 -translate-y-24 2xl:left-5 2xl:-translate-y-29 4xl:-translate-y-40 4xl:left-72";
+        if (direction === "rtl")
+          return "-right-14 -translate-y-24 2xl:right-5 2xl:-translate-y-29 4xl:-translate-y-40 4xl:right-72";
+    }
+  };
+
+  const determineTechStripeChevron = () => {
+    if (direction === "ltr")
+      return "top-full left-full -translate-y-1.5 -translate-x-5 -rotate-90";
+    if (direction === "rtl")
+      return "bottom-full right-full translate-y-1.5 translate-x-30 rotate-90";
+  };
+
+  const determineFlexFlow = () => {
+    if (direction === "rtl") return "lg:flex-row-reverse";
+    if (direction === "ltr") return "lg:flex-row";
+  };
+
   return (
     <div
-      className={`Section ${determineColor()} z-50 px-7 flex-col-reverse h-148 w-full flex sm:px-22 sm:h-96 md:flex md:flex-row lg:px-24 lg:h-80 xl:px-28 3xl:px-40 4xl:px-96 4xl:h-128`}
+      className={`Section ${determineColor()} z-50 px-7 flex-col-reverse items-center h-148 w-full flex lg:px-16 lg:h-80 lg:flex ${determineFlexFlow()} xl:px-28 2xl:px-40 2xl:h-[22rem] 3.5xl:h-96 4xl:px-80 4xl:h-124`}
     >
       {/* Content */}
-      <div className="content flex flex-col flex-shrink-0 justify-center items-center space-y-10 py-12 max-w-max sm:py-6 sm:space-y-10 lg:py-9 lg:space-y-8 xl:pl-4 4xl:space-y-16">
+      <div className="content flex flex-col flex-shrink-0 justify-center items-center space-y-10 py-12 max-w-max sm:py-6 sm:space-y-5 lg:px-2 lg:py-9 lg:space-y-6 xl:pl-4 2xl:flex-grow 2xl:min-w-[45%] 2xl:w-126 2xl:space-y-8 4xl:space-y-16 4xl:min-w-[40%]">
         {/* title */}
-        <div className="title pt-4 pb-2">{title}</div>
+        <div className="title pt-4 pb-2 sm:pb-0 md:pt-14 lg:mt-0 lg:pt-4">
+          {title}
+        </div>
 
         {/* description */}
-        <p className="description text-white-100 z-10 max-w-sm font-poppins font-normal text-sm text-justify leading-tight px-3.5">
+        <p className="description text-white-100 z-10 max-w-sm font-poppins font-normal text-sm text-justify leading-tight px-3.5 lg:text-xs lg:px-8 2xl:text-sm 2xl:px-0 3.5xl:text-sm 4xl:text-tiny">
           {description}
         </p>
         {/* buttons */}
-        <div className="flex space-x-2 z-10 justify-around items-center w-full px-3.5 sm:space-x-4 lg:px-4">
+        <div className="flex space-x-2 z-10 justify-around items-center w-full px-3.5 sm:space-x-4 sm:pb-8 lg:px-4 2xl:px-10 2xl:space-x-0 4xl:justify-center 4xl:space-x-14">
           <a
             aria-disabled
             className={`rounded-md flex justify-center items-center space-x-2.5 sm:space-x-4 ${
@@ -49,7 +83,7 @@ const ProjectsSection = ({
             rel="noreferrer"
             target="_blank"
           >
-            <span className="text-white-200 text-sm 4xl:text-lg">
+            <span className="text-white-200 text-sm sm:text-tiny 4xl:text-lg">
               {links.primary.label}
             </span>
             <svg
@@ -63,7 +97,7 @@ const ProjectsSection = ({
             </svg>
           </a>
           <a
-            className="underline text-white-200 text-sm xl:text-tiny 4xl:text-lg"
+            className="underline text-black-100 text-sm xl:text-tiny 4xl:text-lg 2xl:font-medium bg-opacity-10 rounded-sm shadow-sm px-2 py-1"
             href={links.secondary.url}
             without
             rel="noreferrer"
@@ -88,15 +122,25 @@ const ProjectsSection = ({
         {Icons(ICON_NAMES.DOTS, 220)}
         {Icons(ICON_NAMES.DOTS, 220)}
       </span>
-      {/* stripe */}
-      <div className="stripe hidden absolute md:flex items-center justify-start px-3 text-white-100 bg-black-100 text-xs font-poppins font-normal transform h-11 w-52 left-4 -translate-y-6 rotate-0">
+      {/* tags stripe */}
+      <div
+        className={`stripe hidden absolute transform h-10 w-48 lg:flex items-center justify-start px-3 text-white-100 bg-black-100 text-2xs font-poppins font-normal rotate-90 4xl:h-12 4xl:w-52 4xl:text-xs ${determineStripesPosition(
+          "tags"
+        )}`}
+      >
         <span className="transform rotate-0 sm:rotate-180">{stripeText}</span>
       </div>
-      {/* techs */}
-      <div className="stripe absolute transform hidden md:flex text-white-100 bg-black-100 font-normal font-poppins text-4xs pr-2.5 pl-0 h-8 rotate-90">
+      {/* techs stripe */}
+      <div
+        className={`stripe absolute transform hidden lg:flex text-white-100 bg-black-100 font-normal font-poppins text-4xs pr-2.5 pl-0 h-8 rotate-90 4xl:pr-4 4xl:pl-1 4xl:h-11 4xl:text-2xs ${determineStripesPosition(
+          "tech"
+        )}`}
+      >
         <div className="sub-techs relative flex justify-center items-center space-x-3.5 lg:space-x-3">
           {/* button */}
-          <div className="absolute bg-black-100 z-20 p-1 transform -rotate-90 top-full left-full -translate-x-7 lg:-translate-y-1.5 lg:p-1.5  4xl:p-1.5 4xl:-translate-x-9 4xl:-translate-y-1">
+          <div
+            className={`absolute bg-black-100 z-20 p-1 transform  ${determineTechStripeChevron()}`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4 lg:w-3.5 lg:h-3.5 4xl:w-6 4xl:h-6"

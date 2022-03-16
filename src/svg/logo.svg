@@ -1,18 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 215 47">
-    <g id="Group_2153" data-name="Group 2153" transform="translate(-895 -36)">
-        <text id="MeshuwebDEV" transform="translate(895 74)" fill="#060b43" fontSize="26" fontFamily="Poppins-Black, Poppins" fontWeight="800">
-            <tspan x="0" y="0">
-                      Meshu
-                    </tspan>
-            <tspan y="0" fontFamily="Poppins-Light, Poppins" fontWeight="300">
-                      web
-                    </tspan>
-            <tspan y="0">DEV</tspan>
-        </text>
-        <g id="Group_2068" data-name="Group 2068" transform="translate(12 5)">
-            <rect id="Rectangle_1076" data-name="Rectangle 1076" width="11" height="11" transform="translate(1044 34)" fill="#4be6c9" />
-            <rect id="Rectangle_1077" data-name="Rectangle 1077" width="11" height="11" transform="translate(1063 34)" fill="#7c49e9" />
-            <rect id="Rectangle_1078" data-name="Rectangle 1078" width="11" height="11" transform="translate(1081 34)" fill="#fd7382" />
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.313 30.341">
+    <g transform="translate(-4.736 -5.032)">
+        <path d="M225,595.454l11.916-6.429,11.916,6.429-11.916,6.285Z" transform="translate(-217.524 -583.993)" fill="#fd7382" />
+        <path d="M207.127,668.125l-.085-12.909,12.367,6.6v13.645Z" transform="translate(-202.305 -640.083)" fill="#4be6c9" />
+        <path d="M318.091,661.812l12.367-6.6-.085,12.909-12.282,7.332Z" transform="translate(-296.41 -640.083)" fill="#7c49e9" />
     </g>
 </svg>

@@ -103,7 +103,7 @@ function App() {
           href="#"
           className={`w-11 h-11 z-999 sm:w-12 sm:h-12 4xl:w-20 4xl:h-20 ${
             !intersected ? "opacity-100" : "opacity-0"
-          } fixed z-50 right-5 bottom-5 sm:right-8 sm:bottom-8 rounded-full bg-teal-100 flex justify-center items-center shadow-md text-white-100`}
+          } fixed right-5 bottom-5 sm:right-8 sm:bottom-8 rounded-full bg-teal-100 flex justify-center items-center shadow-md text-white-100`}
           style={{ filter: `hue-rotate(${scroll}deg)` }}
         >
           <svg
@@ -121,9 +121,12 @@ function App() {
         </a>
 
         {/* Navbar */}
-        <header className="">
+        <header className="flex justify-center">
+          <a className="pt-5 sm:hidden" href="#">
+            {Icons(ICON_NAMES.LOGO, 140)}
+          </a>
           <div
-            className={`sidemenu md:hidden animate-side-to-up z-999 fixed ${
+            className={`sidemenu sm:hidden animate-side-to-up z-999 fixed ${
               !intersected
                 ? "animate-side-to-up"
                 : "animate-up-to-side -left-10 top-10"
@@ -132,12 +135,25 @@ function App() {
             <SideMenu intersected={!intersected} />
           </div>
           <nav
-            className={`hidden md:visible py-2 w-full z-50 bg-white-200 ${
-              intersected ? "" : "shadow-md fixed"
+            className={`hidden sm:block py-2 w-full z-999 bg-white-200 3xl:py-6 ${
+              intersected ? "" : "animate-fade-in shadow-sm fixed 3xl:py-4"
             }`}
           >
-            <ul className="flex space-x-6 justify-center items-end text-sm 3xl:text-base 4xl:text-xl text-black-100">
-              <li className="px-2.5 py-2 uppercase hover:underline">
+            <ul className="flex space-x-6 justify-center items-center text-sm 3xl:text-base 4xl:text-xl text-black-100 3xl:space-x-14">
+              <li className="px-2.5 py-1 uppercase hover:underline">
+                <a href="#work">work</a>
+              </li>
+
+              <li className="px-2.5 py-1 uppercase hover:underline">
+                <a href="#technologies">technologies</a>
+              </li>
+              <li className="px-2.5 py-1">
+                <a href="#">{Icons(ICON_NAMES.LOGO, 30)}</a>
+              </li>
+              <li className="px-2.5 py-1 uppercase hover:underline">
+                <a href="#contact">contact</a>
+              </li>
+              <li className="px-2.5 py-1 uppercase hover:underline">
                 <a href="/Resume.pdf" download>
                   <div className="flex justify-center items-center space-x-2">
                     <span>resume</span>
@@ -156,19 +172,6 @@ function App() {
                   </div>
                 </a>
               </li>
-              <li className="px-2.5 py-2 uppercase hover:underline">
-                <a href="#work">work</a>
-              </li>
-
-              <li className="px-2.5 py-2">
-                <a href="#">{Icons(ICON_NAMES.LOGO, 140)}</a>
-              </li>
-              <li className="px-2.5 py-2 uppercase hover:underline">
-                <a href="#technologies">technologies</a>
-              </li>
-              <li className="px-2.5 py-2 uppercase hover:underline">
-                <a href="#contact">contact</a>
-              </li>
             </ul>
           </nav>
         </header>
@@ -178,27 +181,19 @@ function App() {
           style={{ paddingTop: !intersected && !isMobile() ? "62.5px" : "0px" }}
         >
           {/* Hero */}
-          <section className="hero relative px-4 sm:h-screen flex flex-col justify-between items-center leading-none text-black-100 sm:justify-between sm:px-28 sm:flex-row lg:px-12 xl:px-20 3xl:px-32 4xl:px-80">
-            {/* Background letter M */}
-            <span
-              className="M absolute select-none z-0 text-black-200 font-black font-tiempos right-full text-34xl translate-y-44 translate-x-80 xl:translate-y-10 3xl:translate-y-16 transform xl:translate-x-122 xl:text-45xl 3xl:text-50xl"
-              style={{ opacity: "3%" }}
-            >
-              M
-            </span>
-
+          <section className="hero relative px-4 flex flex-col justify-between items-center leading-none text-black-100 sm:pt-4 md:pt-8 lg:justify-between lg:px-16 lg:flex-row lg:h-screen lg:pt-10 xl:px-28 2xl:px-36 2xl:pt-0 3xl:px-44 3.5xl:px-64 4xl:px-80">
             {/* Left-side container */}
-            <div className="hero-text pb-28 flex flex-col h-screen items-center justify-center space-y-14 sm:items-start lg:pl-4">
+            <div className="hero-text pb-28 flex flex-col h-screen items-center justify-center space-y-14 sm:pb-22 md:items-start lg:pl-4 xl:h-auto">
               {/* Text  */}
               <div className="Text flex flex-col space-y-3 max-w-min">
-                <h1 className="text-10xl font-tiempos font-black leading-none -mb-10 flex-grow-0 max-w-min lg:text-10xl xl:text-12xl  3xl:text-12xl 4xl:text-16xl">
+                <h1 className="text-10xl font-tiempos font-black leading-none -mb-10 flex-grow-0 max-w-min sm:text-11xl md:text-12xl lg:text-10xl xl:text-11xl 2xl:text-12xl 3xl:text-12xl 4xl:text-17xl">
                   Build
                 </h1>
                 <div className="flex flex-col space-y-1.5 text-base font-tiempos self-end py-3">
-                  <h4 className="text-base tracking-wide font-tiempos font-bold sm:text-lg 4xl:text-4xl 3xl:text-2xl">
+                  <h4 className="text-base tracking-wide font-tiempos font-bold sm:text-lg lg:text-base lg:text-right 2xl:text-xl 4xl:text-4xl 3xl:text-2xl">
                     exceptional experiences
                   </h4>
-                  <div className="text-3xs flex flex-col space-y-1 sm:text-xs 4xl:text-lg 3xl:text-sm">
+                  <div className="text-3xs flex flex-col space-y-1 sm:text-xs lg:text-xs 2xl:text-sm 4xl:text-lg 3xl:text-sm">
                     <div>Expressively & precisely communicate your values</div>
                     <div>Efficiently achieve your goals.</div>
                   </div>
@@ -361,7 +356,7 @@ function App() {
             </div>
 
             {/* Right-side container */}
-            <div className="hero-cards flex flex-col justify-center items-center relative">
+            <div className="hero-cards flex flex-col justify-center items-center lg:self-start xl:self-auto lg:pt-6 2xl:pt-0 2xl:pb-10 relative">
               {/* Background Dots */}
               <span
                 className="absolute z-0 text-black-200 font-black scale-85 -left-8 -top-10 sm:left-0 sm:top-0 sm:scale-100"
@@ -369,13 +364,13 @@ function App() {
               >
                 {Icons(ICON_NAMES.DOTS)}
               </span>
-              <div className="px-16 py-2 max-w-lg sm:max-w-lg lg:px-2 lg:max-w-sm xl:max-w-lg 4xl:px-14 4xl:max-w-3xl">
+
+              <div className="px-19 py-2 max-w-lg sm:max-w-xl lg:px-2 lg:max-w-sm xl:max-w-md 4xl:px-14 4xl:max-w-2xl">
                 <AutoPlaySwipeableViews
                   interval={600000}
                   axis={"x"}
                   index={activeStep}
                   onChangeIndex={handleStepChange}
-                  enableMouseEvents
                 >
                   <Card
                     title={Icons(ICON_NAMES.BACKEND_TITLE, 250)}
@@ -422,45 +417,54 @@ function App() {
                 activeStep={activeStep}
               />
             </div>
+
+            {/* Background letter M */}
+            <span
+              className="M absolute select-none z-0 text-black-200 font-black font-tiempos right-full text-34xl translate-y-44 translate-x-80 xl:translate-y-10 3xl:translate-y-16 transform xl:translate-x-122 xl:text-45xl 3xl:text-50xl 3.5xl:text-55xl 3.5xl:translate-x-144"
+              style={{ opacity: "3%" }}
+            >
+              M
+            </span>
           </section>
 
           {/* Work */}
           <section className="work w-full bg-white-200 ">
-            {/* Background projects */}
+            {/* Background Work */}
             <Parallax speed={7}>
               <span
-                className="projects-bg-text absolute transform select-none z-0 text-11xl text-black-200 font-black font-tiempos left-10 -top-10 -translate-y-3/4 -translate-x-1/4"
+                className="projects-bg-text absolute transform select-none z-0 text-11xl text-black-200 font-black font-tiempos left-20 -top-10 -translate-y-3/4 -translate-x-1/4 2xl:text-14xl"
                 style={{ opacity: "4%" }}
               >
                 Work
               </span>
             </Parallax>
-            <div className="flex flex-col space-y-80 scroll-mt-60" id="work">
-              <div className="scroll-mt-60" id="work">
-                <ProjectsSection
-                  title={Icons(ICON_NAMES.SINGULARITY_TITLE, 300)}
-                  stripeText="design / develop / deploy"
-                  description={TEXTS.SINGULARITY_CONTENT.en}
-                  color="pink"
-                  links={{
-                    primary: {
-                      label: "Finishing touches..",
-                      url: "",
-                      disabled: true,
-                    },
-                    secondary: {
-                      label: "GitHub repo ",
-                      url: LINKS.REPOS.SINGULARITY,
-                    },
-                  }}
-                  mockup={
-                    <Suspense fallback={<span>Loading...</span>}>
-                      <SingularityMockupSVG />
-                    </Suspense>
-                  }
-                  // mockupTransform={determineSingularityTransform()}
-                />
-              </div>
+            <div
+              className="flex flex-col space-y-80 scroll-mt-72 2xl:scroll-mt-80"
+              id="work"
+            >
+              <ProjectsSection
+                title={Icons(ICON_NAMES.SINGULARITY_TITLE, 300)}
+                stripeText="design / develop / deploy"
+                description={TEXTS.SINGULARITY_CONTENT.en}
+                direction="ltr"
+                color="pink"
+                links={{
+                  primary: {
+                    label: "Finishing touches..",
+                    url: "",
+                    disabled: true,
+                  },
+                  secondary: {
+                    label: "GitHub repo ",
+                    url: LINKS.REPOS.SINGULARITY,
+                  },
+                }}
+                mockup={
+                  <Suspense fallback={<span>Loading...</span>}>
+                    <SingularityMockupSVG />
+                  </Suspense>
+                }
+              />
               <ProjectsSection
                 direction="rtl"
                 stripeText="design / develop / deploy"
@@ -513,31 +517,31 @@ function App() {
                 <a
                   href={LINKS.REPOS.MAIN}
                   target="_blank"
-                  className="-mt-72 text-1xl font-poppins font-semibold underline text-black-100 4xl:text-4xl"
+                  className="-mt-72 text-1xl font-poppins font-semibold underline text-black-100 2xl:text-2xl 4xl:text-4xl"
                 >
                   More projects @GitHub..
                 </a>
                 <div
                   style={{ height: "2px" }}
-                  className="w-1/2 4xl:w-122 bg-black-200 bg-opacity-10 opacity-20 shadow-line"
+                  className="w-1/2 2xl:w-114 4xl:w-122 bg-black-200 bg-opacity-10 opacity-20 shadow-line"
                 />
               </section>
               {/* Technologies and tools */}
-              <section className="techs-tools">
+              <section className="techs-tools to-transparent-bg">
                 <div className="-mt-40">
                   {Icons(ICON_NAMES.DIVIDER_TECHS_TOP, 1920)}
                 </div>
 
                 <div
                   style={{
-                    minHeight: "900px",
+                    minHeight: "700px",
                   }}
-                  className="bg-black-200 flex flex-col relative justify-center items-center pt-30 -scroll-mt-16"
+                  className="bg-black-200 flex flex-col relative justify-center items-center pt-30 xl:pt-5 -scroll-mt-16"
                   id="technologies"
                 >
                   {/* Background techs & tools */}
                   <span
-                    className="absolute select-none pl-2 z-0 flex flex-col leading-none -space-y-4 font-black font-tiempos transform left-0 -top-9 text-15xl 4xl:text-19xl"
+                    className="absolute select-none pl-2 z-0 flex flex-col leading-none -space-y-4 font-black font-tiempos transform left-0 -top-9 text-9xl md:text-10xl lg:text-11xl xl:text-13xl 2xl:text-14xl 4xl:text-19xl"
                     style={{
                       opacity: "8%",
                       color: "#4E5776",
@@ -547,7 +551,7 @@ function App() {
                     <span>& Tools</span>
                   </span>
                   {/* Icons */}
-                  <div className="flex w-2/3 h-96 flex-wrap items-center space-x-4 justify-around transform scale-125">
+                  <div className="flex w-2/3 h-96 flex-wrap items-center space-x-4 md:space-x-6 justify-around transform scale-125 md:justify-evenly xl:px-10 xl:items-end xl:space-x-8">
                     {Icons(ICON_NAMES.NODEJS_WHITE, 75)}
                     {Icons(ICON_NAMES.EXPRESS_WHITE, 80)}
                     {Icons(ICON_NAMES.MONGODB_WHITE, 90)}
@@ -570,13 +574,13 @@ function App() {
                     {Icons(ICON_NAMES.HEROKU, 110)}
                   </div>
                 </div>
-                <div className="-scroll-mt-96" id="contact">
+                <div className="-scroll-mt-96 xl:-scroll-mt-124" id="contact">
                   {Icons(ICON_NAMES.DIVIDER_TECHS_BOTTOM, 1920)}
                 </div>
               </section>
               {/* Contact */}
               <section className="contact flex flex-col space-y-16 justify-center items-center pb-52">
-                <div className="text-8xl 4xl:text-19xl font-tiempos text-black-100 font-black -mt-28">
+                <div className="text-7xl font-tiempos text-black-100 font-black -mt-28 sm:text-9xl md:text-11xl xl:text-13xl 2xl:text-14xl 4xl:text-19xl">
                   Contact
                 </div>
                 <div className="flex flex-col text-xl text-black-100 justify-center items-center 4xl:text-4xl">
