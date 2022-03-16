@@ -29,16 +29,16 @@ const ProjectsSection = ({
    */
   const determineStripesPosition = (stripe) => {
     switch (stripe) {
-      case "tech":
-        if (direction === "ltr")
-          return "-right-7 translate-y-28 2xl:right-5 2xl:translate-y-32 3xl:translate-y-48 3xl:right-72";
-        if (direction === "rtl")
-          return "-left-7 translate-y-28 2xl:left-5 2xl:translate-y-32 3xl:translate-y-48 3xl:left-72";
       case "tags":
         if (direction === "ltr")
-          return "-left-14 -translate-y-24 2xl:left-5 2xl:-translate-y-29 4xl:-translate-y-40 4xl:left-72";
+          return "-left-14 -translate-y-24 xl:-left-5 2xl:left-5 2xl:-translate-y-29 3xl:left-18 4xl:-translate-y-40 4xl:left-72";
         if (direction === "rtl")
-          return "-right-14 -translate-y-24 2xl:right-5 2xl:-translate-y-29 4xl:-translate-y-40 4xl:right-72";
+          return "-right-14 -translate-y-24 xl:-right-5 2xl:right-5 2xl:-translate-y-29 3xl:right-18 4xl:-translate-y-40 4xl:right-72";
+      case "tech":
+        if (direction === "ltr")
+          return "-right-7 translate-y-28 xl:right-2 2xl:right-5 2xl:translate-y-32 3xl:right-24 4xl:translate-y-48 4xl:right-72";
+        if (direction === "rtl")
+          return "-left-7 translate-y-28 xl:left-2 2xl:left-5 2xl:translate-y-32 3xl:left-24 4xl:translate-y-48 4xl:left-72";
     }
   };
 
