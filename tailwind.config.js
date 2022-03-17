@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     extend: {
       zIndex: {
+        "sub-zero": "-1",
         999: "999",
       },
       screens: {

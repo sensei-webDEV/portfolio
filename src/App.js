@@ -98,10 +98,7 @@ function App() {
 
   return (
     <Theme>
-      <div
-        className="App relative bg-white-200 flex flex-col overflow-hidden"
-        // style={{ marginRight: `${scrollable ? "" : `1px`}` }}
-      >
+      <div className="App relative bg-white-200 flex flex-col overflow-hidden">
         {/* Arrow to up */}
         {/* eslint-disable */}
         <a
@@ -206,7 +203,7 @@ function App() {
               </div>
               {/* Diagram + call to action */}
               <div
-                className="diagram flex space-x-9 items-start self-end mr-6"
+                className="diagram flex z-40 space-x-9 items-start self-end mr-6"
                 ref={intersectionRef}
               >
                 {/* Design - Hire me - Work */}
@@ -690,7 +687,7 @@ function App() {
                 </div>
               </section>
               {/* Contact */}
-              <section className="contact flex flex-col space-y-16 justify-center items-center pb-52">
+              <section className="contact flex flex-col space-y-16 justify-center items-center pb-52 selection:bg-pink-100">
                 <div className="text-7xl font-tiempos text-black-100 font-black -mt-28 sm:text-9xl md:text-11xl xl:text-13xl 2xl:text-14xl 4xl:text-19xl">
                   Contact
                 </div>
