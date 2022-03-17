@@ -1,5 +1,6 @@
 import React from "react";
 import { Icons, ICON_NAMES } from "../svg";
+import Popover from "./Popover";
 
 const ProjectsSection = ({
   direction = "ltr",
@@ -14,6 +15,7 @@ const ProjectsSection = ({
   description,
   mockup,
   mockupTransform,
+  setScrollable,
 }) => {
   // helpers
   const determineColor = () => {
@@ -56,7 +58,7 @@ const ProjectsSection = ({
 
   return (
     <div
-      className={`Section ${determineColor()} z-50 px-7 flex-col-reverse items-center h-148 w-full flex lg:px-16 lg:h-80 lg:flex ${determineFlexFlow()} xl:px-28 2xl:px-40 2xl:h-[22rem] 3.5xl:h-96 4xl:px-80 4xl:h-124`}
+      className={`Section bg-${color}-100 selection:bg-black-100 z-50 px-7 flex-col-reverse items-center h-148 w-full flex lg:px-16 lg:h-80 lg:flex ${determineFlexFlow()} xl:px-28 2xl:px-40 2xl:h-[22rem] 3.5xl:h-96 4xl:px-80 4xl:h-124`}
     >
       {/* Content */}
       <div className="content flex flex-col flex-shrink-0 justify-center items-center space-y-10 py-12 max-w-max sm:py-6 sm:space-y-5 lg:px-2 lg:py-9 lg:space-y-6 xl:pl-4 2xl:flex-grow 2xl:min-w-[45%] 2xl:w-126 2xl:space-y-8 4xl:space-y-16 4xl:min-w-[40%]">
@@ -73,7 +75,7 @@ const ProjectsSection = ({
         <div className="flex space-x-2 z-10 justify-around items-center w-full px-3.5 sm:space-x-4 sm:pb-8 lg:px-4 2xl:px-10 2xl:space-x-0 4xl:justify-center 4xl:space-x-14">
           <a
             aria-disabled
-            className={`rounded-md flex justify-center items-center space-x-2.5 sm:space-x-4 ${
+            className={`rounded-md flex justify-center text-white-200 items-center space-x-2.5 shadow-sm hover:bg-gradient-to-br hover:from-white-100 hover:to-white-200 hover:text-black-100 hover:scale-104 hover:font-medium hover:shadow-lg sm:space-x-4 ${
               links.primary.disabled
                 ? "cursor-not-allowed pointer-events-none bg-gray-200 text-white-100 opacity-80"
                 : "bg-black-100 text-white-200"
@@ -83,7 +85,7 @@ const ProjectsSection = ({
             rel="noreferrer"
             target="_blank"
           >
-            <span className="text-white-200 text-sm sm:text-tiny 4xl:text-lg">
+            <span className="text-sm sm:text-tiny 4xl:text-lg">
               {links.primary.label}
             </span>
             <svg
@@ -132,14 +134,19 @@ const ProjectsSection = ({
       </div>
       {/* techs stripe */}
       <div
-        className={`stripe absolute transform hidden lg:flex text-white-100 bg-black-100 font-normal font-poppins text-4xs pr-2.5 pl-0 h-8 rotate-90 4xl:pr-4 4xl:pl-1 4xl:h-11 4xl:text-2xs ${determineStripesPosition(
+        className={`stripe absolute transform hidden lg:flex text-white-100 bg-black-100 font-normal font-poppins text-4xs pr-2.5 pl-0 h-8 rotate-90 z-999 4xl:pr-4 4xl:pl-1 4xl:h-11 4xl:text-2xs ${determineStripesPosition(
           "tech"
         )}`}
       >
         <div className="sub-techs relative flex justify-center items-center space-x-3.5 lg:space-x-3">
           {/* button */}
-          <div
-            className={`absolute bg-black-100 z-20 p-1 transform  ${determineTechStripeChevron()}`}
+          <Popover
+            direction={direction}
+            setScrollable={setScrollable}
+            technologies={technologies}
+          />
+          {/* <div
+            className={`absolute bg-black-100 z-20 p-1 transform ${determineTechStripeChevron()}`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +160,7 @@ const ProjectsSection = ({
                 clipRule="evenodd"
               />
             </svg>
-          </div>
+          </div> */}
           <div className="transform font-medium uppercase">technologies</div>
           <div className="transform -rotate-90">
             <svg

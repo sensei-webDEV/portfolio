@@ -7,12 +7,20 @@
   transition: position 3s ease-in-out;
   transition: box-shadow 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
-
   /* outline: 1px solid rgba(0, 255, 17, 0.496); */
 }
 
 .smooth-scrolling {
   scroll-behavior: smooth;
+}
+
+.backward-arrow {
+  z-index: 999;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #d81111;
 }
 
 .palette-gradient {
@@ -70,6 +78,13 @@
   font-family: "Poppins";
   src: url("./fonts/Poppins-Black.ttf") format("woff");
   font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tiempos";
+  src: url("./fonts/TiemposHeadlineTest-light.otf") format("woff");
+  font-weight: 300;
   font-display: swap;
 }
 

@@ -20,7 +20,7 @@ const Card = ({
       {right && (
         <div
           onClick={right}
-          className="arrow absolute hover:cursor-pointer bg-pink-100 transform w-8 h-12 right-0 translate-x-1/2 top-1/2 -translate-y-3/4 text-white-100 flex justify-center items-center sm:w-9 sm:h-14 lg:w-8 lg:h-12 4xl:w-12 4xl:h-16"
+          className="arrow hidden absolute hover:cursor-pointer bg-pink-100 transform w-8 h-12 right-0 translate-x-1/2 top-1/2 -translate-y-3/4 text-white-100 lg:flex justify-center items-center hover:scale-103 hover:shadow-md hover:bg-purple-100 sm:w-9 sm:h-14 lg:w-8 lg:h-12 4xl:w-12 4xl:h-16"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const Card = ({
       {left && (
         <div
           onClick={left}
-          className="arrow absolute hover:cursor-pointer bg-pink-100 w-8 h-12 transform left-0 -translate-x-1/2 top-1/2 -translate-y-3/4 rotate-180 text-white-100 flex justify-center items-center sm:w-9 sm:h-14 lg:w-8 lg:h-12 4xl:w-12 4xl:h-16 "
+          className="arrow hidden absolute hover:cursor-pointer bg-pink-100 w-8 h-12 transform left-0 -translate-x-1/2 top-1/2 -translate-y-3/4 rotate-180 text-white-100 lg:flex justify-center items-center hover:scale-103 hover:shadow-md hover:bg-purple-100 sm:w-9 sm:h-14 lg:w-8 lg:h-12 4xl:w-12 4xl:h-16 "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,9 +69,12 @@ const Card = ({
         {icons.map((icon, i) => (
           <span key={i}>{icon}</span>
         ))}
-        <span className="font-tiempos font-black underline tracking-widest">
+        <a
+          href="#technologies"
+          className="font-tiempos font-black underline tracking-widest"
+        >
           ...
-        </span>
+        </a>
       </div>
     </div>
   );

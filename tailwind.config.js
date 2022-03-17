@@ -49,14 +49,30 @@ module.exports = {
           "50%": { transform: "scale(1.02)" },
           "100%": { transform: "scale(1.05)" },
         },
+        // right-0 top-1/2 -translate-y-2/3 opacity-0
+        "slide-to-view": {
+          "0%": {
+            opacity: "0",
+            right: "-10px",
+            top: "50%",
+            transform: "translateY(-66%)",
+          },
+          "100%": {
+            opacity: "100",
+            right: "0px",
+            top: "50%",
+            transform: "translateY(-66%) ",
+          },
+        },
       },
       animation: {
         "hue-rotate": "hue-rotate 2.5s ease-in-out infinite",
         "scale-105": "scale-105 0.25s ease-in-out",
         "side-to-up": "side-to-up 0.50s ease-in-out 1 forwards",
         "up-to-side": "up-to-side 0.50s ease-in-out 1 forwards",
+        "slide-to-view": "slide-to-view 0.35s ease-in-out 1 forwards",
         "fade-in": "fade-in 0.75s ease-in-out 1",
-        "fade-out": "fade-out 0.75s ease-in-out 1",
+        "fade-out": "fade-out 0.75s ease-in-out 1 forwards",
       },
       scale: {
         35: "0.35",

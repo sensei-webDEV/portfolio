@@ -1,17 +1,19 @@
-import { Suspense, lazy } from "react";
-import Card from "./components/Card";
+import { Suspense, lazy, useMemo } from "react";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { ICON_NAMES, Icons } from "./svg";
-import SwipeableViews from "react-swipeable-views";
+import { useWindowSize, useIntersection } from "react-use";
+import { Parallax } from "react-scroll-parallax";
 import { autoPlay } from "react-swipeable-views-utils";
+
+import Card from "./components/Card";
+import SwipeableViews from "react-swipeable-views";
 import MobileStepper from "@mui/material/MobileStepper";
 import Theme from "./Theme";
 import TEXTS from "./content/texts";
 import LINKS from "./content/links";
 import ProjectsSection from "./components/ProjectsSection";
-import { useWindowSize, useIntersection } from "react-use";
-import { Parallax } from "react-scroll-parallax";
 import SideMenu from "./components/SideMenu";
+import useScrollbarSize from "react-scrollbar-size";
 
 // Images
 const SingularityMockupSVG = lazy(() =>
@@ -22,16 +24,16 @@ const NoorScraperMockupSVG = lazy(() =>
   import("./components/NoorScraperMockupSVG")
 );
 
-// import SingularityMockupSVG from "./components/SingularityMockupSVG";
-// import TictacgoMockupSVG from "./components/TictacgoMockupSVG";
-// import NoorScraperMockupSVG from "./components/NoorScraperMockupSVG";
-
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function App() {
   const { width: windowWidth } = useWindowSize();
+  const { height: _scrollHeight, width: _scrollWidth } = useScrollbarSize();
   const [activeStep, setActiveStep] = useState(0);
+  const [scrollable, setScrollable] = useState(true);
   const [scroll, setScroll] = useState(window.scrollY);
+
+  const scrollWidth = useMemo(() => _scrollWidth, []);
 
   const [intersected, setIntersected] = useState(false);
   const maxSteps = 3;
@@ -96,7 +98,10 @@ function App() {
 
   return (
     <Theme>
-      <div className="App relative bg-white-200 flex flex-col overflow-hidden">
+      <div
+        className="App relative bg-white-200 flex flex-col overflow-hidden"
+        // style={{ marginRight: `${scrollable ? "" : `1px`}` }}
+      >
         {/* Arrow to up */}
         {/* eslint-disable */}
         <a
@@ -123,7 +128,7 @@ function App() {
         {/* Navbar */}
         <header className="flex justify-center">
           <a className="pt-5 sm:hidden" href="#">
-            {Icons(ICON_NAMES.LOGO, 140)}
+            {Icons(ICON_NAMES.LOGO, 60)}
           </a>
           <div
             className={`sidemenu sm:hidden animate-side-to-up z-999 fixed ${
@@ -181,7 +186,7 @@ function App() {
           style={{ paddingTop: !intersected && !isMobile() ? "62.5px" : "0px" }}
         >
           {/* Hero */}
-          <section className="hero relative px-4 flex flex-col justify-between items-center leading-none text-black-100 sm:pt-4 md:pt-8 lg:justify-between lg:px-16 lg:flex-row lg:h-screen lg:pt-10 xl:px-28 2xl:px-36 2xl:pt-0 3xl:px-44 3.5xl:px-64 4xl:px-80">
+          <section className="hero relative selection:bg-teal-100 px-4 flex flex-col justify-between items-center leading-none text-black-100 sm:pt-4 md:pt-8 lg:justify-between lg:px-16 lg:flex-row lg:h-screen lg:pt-10 xl:px-28 2xl:px-36 2xl:pt-0 3xl:px-44 3.5xl:px-64 4xl:px-80">
             {/* Left-side container */}
             <div className="hero-text pb-28 flex flex-col h-screen items-center justify-center space-y-14 sm:pb-22 md:items-start lg:pl-4 xl:h-auto">
               {/* Text  */}
@@ -367,7 +372,7 @@ function App() {
 
               <div className="px-19 py-2 max-w-lg sm:max-w-xl lg:px-2 lg:max-w-sm xl:max-w-md 4xl:px-14 4xl:max-w-2xl">
                 <AutoPlaySwipeableViews
-                  interval={600000}
+                  interval={12000}
                   axis={"x"}
                   index={activeStep}
                   onChangeIndex={handleStepChange}
@@ -378,10 +383,9 @@ function App() {
                     stripeText="Development"
                     right={handleNext}
                     icons={[
-                      Icons(ICON_NAMES.NODEJS_, 52),
+                      Icons(ICON_NAMES.NODEJS, 52),
                       Icons(ICON_NAMES.EXPRESS, 52),
                       Icons(ICON_NAMES.MONGODB, 64),
-                      Icons(ICON_NAMES.PASSPORT, 24),
                     ]}
                   />
                   <Card
@@ -443,6 +447,7 @@ function App() {
               id="work"
             >
               <ProjectsSection
+                setScrollable={setScrollable}
                 title={Icons(ICON_NAMES.SINGULARITY_TITLE, 300)}
                 stripeText="design / develop / deploy"
                 description={TEXTS.SINGULARITY_CONTENT.en}
@@ -459,6 +464,21 @@ function App() {
                     url: LINKS.REPOS.SINGULARITY,
                   },
                 }}
+                technologies={[
+                  Icons(ICON_NAMES.NODEJS_WHITE, 50),
+                  Icons(ICON_NAMES.EXPRESS_WHITE, 65),
+                  Icons(ICON_NAMES.MONGODB_WHITE, 75),
+                  Icons(ICON_NAMES.SEND_GRID, 60),
+                  Icons(ICON_NAMES.REDIS, 70),
+                  Icons(ICON_NAMES.POSTMAN, 85),
+                  Icons(ICON_NAMES.REACTJS, 35),
+                  Icons(ICON_NAMES.TAILWIND_WHITE, 70),
+                  Icons(ICON_NAMES.XD, 35),
+                  Icons(ICON_NAMES.ILLUSTRATOR, 35),
+                  Icons(ICON_NAMES.GITHUB, 28),
+                  Icons(ICON_NAMES.DIGITAL_OCEAN, 55),
+                  Icons(ICON_NAMES.HEROKU, 95),
+                ]}
                 mockup={
                   <Suspense fallback={<span>Loading...</span>}>
                     <SingularityMockupSVG />
@@ -466,11 +486,25 @@ function App() {
                 }
               />
               <ProjectsSection
+                setScrollable={setScrollable}
                 direction="rtl"
                 stripeText="design / develop / deploy"
                 title={Icons(ICON_NAMES.TICTACGO_TITLE, 300)}
                 description={TEXTS.TICTACGO_CONTENT.en}
                 color="teal"
+                technologies={[
+                  Icons(ICON_NAMES.NODEJS_WHITE, 50),
+                  Icons(ICON_NAMES.EXPRESS_WHITE, 65),
+                  Icons(ICON_NAMES.SOCKET_IO, 40),
+                  Icons(ICON_NAMES.POSTMAN, 85),
+                  Icons(ICON_NAMES.HTML5_WHITE, 28),
+                  Icons(ICON_NAMES.CSS3_WHITE, 28),
+                  Icons(ICON_NAMES.ILLUSTRATOR, 35),
+                  Icons(ICON_NAMES.PHOTOSHOP, 35),
+                  Icons(ICON_NAMES.GITHUB, 28),
+                  Icons(ICON_NAMES.AWS, 55),
+                  Icons(ICON_NAMES.HEROKU, 95),
+                ]}
                 links={{
                   primary: {
                     label: "tic-tac-go.com",
@@ -489,11 +523,26 @@ function App() {
                 mockupTransform={determineTicTransform()}
               />
               <ProjectsSection
+                setScrollable={setScrollable}
                 direction="ltr"
                 stripeText="design / develop / deploy"
                 title={Icons(ICON_NAMES.NOOR_TITLE, 300)}
                 description={TEXTS.NOOR_SCRAPER_CONTENT.en}
                 color="purple"
+                technologies={[
+                  Icons(ICON_NAMES.NODEJS_WHITE, 50),
+                  Icons(ICON_NAMES.EXPRESS_WHITE, 65),
+                  Icons(ICON_NAMES.SOCKET_IO, 40),
+                  Icons(ICON_NAMES.PUPPETEER_WHITE, 33),
+                  Icons(ICON_NAMES.POSTMAN, 85),
+                  Icons(ICON_NAMES.HTML5_WHITE, 28),
+                  Icons(ICON_NAMES.CSS3_WHITE, 28),
+                  Icons(ICON_NAMES.ILLUSTRATOR, 35),
+                  Icons(ICON_NAMES.PHOTOSHOP, 35),
+                  Icons(ICON_NAMES.GITHUB, 28),
+                  Icons(ICON_NAMES.AWS, 55),
+                  Icons(ICON_NAMES.HEROKU, 95),
+                ]}
                 links={{
                   primary: {
                     label: "noor-scraper.com",
@@ -541,7 +590,7 @@ function App() {
                 >
                   {/* Background techs & tools */}
                   <span
-                    className="absolute select-none pl-2 z-0 flex flex-col leading-none -space-y-4 font-black font-tiempos transform left-0 -top-9 text-9xl md:text-10xl lg:text-11xl xl:text-13xl 2xl:text-14xl 4xl:text-19xl"
+                    className="absolute select-none pl-2 z-0 flex flex-col leading-none -space-y-4 font-black font-tiempos transform left-0 -top-9 text-7xl md:text-10xl lg:text-11xl xl:text-13xl 2xl:text-14xl 4xl:text-19xl"
                     style={{
                       opacity: "8%",
                       color: "#4E5776",
@@ -551,27 +600,31 @@ function App() {
                     <span>& Tools</span>
                   </span>
                   {/* Icons */}
-                  <div className="flex w-2/3 h-96 flex-wrap items-center space-x-4 md:space-x-6 justify-around transform scale-125 md:justify-evenly xl:px-10 xl:items-end xl:space-x-8">
+                  <div className="flex w-2/3 h-96 flex-wrap items-center space-x-6 md:space-x-6 justify-evenly transform pr-2 scale-125 sm:pr-0 md:justify-evenly xl:px-10 xl:items-end xl:space-x-10">
                     {Icons(ICON_NAMES.NODEJS_WHITE, 75)}
                     {Icons(ICON_NAMES.EXPRESS_WHITE, 80)}
                     {Icons(ICON_NAMES.MONGODB_WHITE, 90)}
                     {Icons(ICON_NAMES.SOCKET_IO, 55)}
+                    {Icons(ICON_NAMES.PUPPETEER_WHITE, 30)}
                     {Icons(ICON_NAMES.SEND_GRID, 80)}
                     {Icons(ICON_NAMES.PASSPORT_WHITE, 30)}
                     {Icons(ICON_NAMES.STRAPI, 60)}
                     {Icons(ICON_NAMES.REDIS, 90)}
                     {Icons(ICON_NAMES.POSTMAN, 100)}
                     {Icons(ICON_NAMES.REACTJS, 45)}
+                    {Icons(ICON_NAMES.HTML5_WHITE, 29)}
+                    {Icons(ICON_NAMES.CSS3_WHITE, 29)}
                     {Icons(ICON_NAMES.TAILWIND_WHITE, 85)}
                     {Icons(ICON_NAMES.JAVASCRIPT, 38)}
                     {Icons(ICON_NAMES.BOOTSTRAP, 45)}
                     {Icons(ICON_NAMES.XD, 40)}
                     {Icons(ICON_NAMES.ILLUSTRATOR, 40)}
                     {Icons(ICON_NAMES.PHOTOSHOP, 40)}
-                    {Icons(ICON_NAMES.GITHUB, 35)}
-                    {Icons(ICON_NAMES.DIGITAL_OCEAN, 70)}
+                    {Icons(ICON_NAMES.GITHUB, 30)}
+                    {Icons(ICON_NAMES.DIGITAL_OCEAN, 65)}
                     {Icons(ICON_NAMES.AWS, 60)}
-                    {Icons(ICON_NAMES.HEROKU, 110)}
+                    {Icons(ICON_NAMES.HEROKU, 100)}
+                    {Icons(ICON_NAMES.NETLIFY_WHITE, 100)}
                   </div>
                 </div>
                 <div className="-scroll-mt-96 xl:-scroll-mt-124" id="contact">
@@ -586,6 +639,14 @@ function App() {
                 <div className="flex flex-col text-xl text-black-100 justify-center items-center 4xl:text-4xl">
                   <a href="mailto:meshari@meshu-web.dev">
                     contact@meshu-web.dev
+                  </a>
+                  <a
+                    target="_blank"
+                    className="flex justify-center items-center space-x-2"
+                    href="https://wa.me/966537926819"
+                  >
+                    <span>Whatsapp</span>
+                    <span>{Icons(ICON_NAMES.WHATSAPP, 18)}</span>
                   </a>
                   <a href="tel:+971589978970">+971 524 527 823</a>
                   <span className="font-medium">Meshari Sulaiman</span>

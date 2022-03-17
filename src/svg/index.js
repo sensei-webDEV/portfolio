@@ -33,6 +33,15 @@ import { ReactComponent as IconNoorTitle } from "./noor-title.svg";
 import { ReactComponent as IconBackendTitle } from "./backend-title.svg";
 import { ReactComponent as IconFrontendTitle } from "./frontend-title.svg";
 import { ReactComponent as IconUIUXTitle } from "./uiux-title.svg";
+import { ReactComponent as IconHtml5 } from "./html5.svg";
+import { ReactComponent as IconHtml5White } from "./html5-white.svg";
+import { ReactComponent as IconCss3 } from "./css3.svg";
+import { ReactComponent as IconCss3White } from "./css3-white.svg";
+import { ReactComponent as IconNetlifyWhite } from "./netlify-white.svg";
+import { ReactComponent as IconNetlify } from "./netlify.svg";
+import { ReactComponent as IconPuppeteer } from "./puppeteer.svg";
+import { ReactComponent as IconPuppeteerWhite } from "./puppeteer-white.svg";
+import { ReactComponent as IconWhatsapp } from "./whatsapp.svg";
 
 import { useWindowSize } from "react-use";
 
@@ -71,6 +80,24 @@ export function Icons(icon, width) {
   switch (icon) {
     case "LOGO":
       return <IconLogo width={(width * scaling()).toString()} />;
+    case "NETLIFY":
+      return <IconNetlify width={(width * scaling()).toString()} />;
+    case "WHATSAPP":
+      return <IconWhatsapp width={(width * scaling()).toString()} />;
+    case "NETLIFY_WHITE":
+      return <IconNetlifyWhite width={(width * scaling()).toString()} />;
+    case "CSS3":
+      return <IconCss3 width={(width * scaling()).toString()} />;
+    case "CSS3_WHITE":
+      return <IconCss3White width={(width * scaling()).toString()} />;
+    case "PUPPETEER":
+      return <IconPuppeteer width={(width * scaling()).toString()} />;
+    case "PUPPETEER_WHITE":
+      return <IconPuppeteerWhite width={(width * scaling()).toString()} />;
+    case "HTML5":
+      return <IconHtml5 width={(width * scaling()).toString()} />;
+    case "HTML5_WHITE":
+      return <IconHtml5White width={(width * scaling()).toString()} />;
     case "SINGULARITY_TITLE":
       return <IconSingularityTitle width={(width * scaling()).toString()} />;
     case "TICTACGO_TITLE":
@@ -147,6 +174,15 @@ export function Icons(icon, width) {
 export const ICON_NAMES = {
   SEND_GRID: "SEND_GRID",
   REDIS: "REDIS",
+  WHATSAPP: "WHATSAPP",
+  PUPPETEER: "PUPPETEER",
+  PUPPETEER_WHITE: "PUPPETEER_WHITE",
+  NETLIFY_WHITE: "NETLIFY_WHITE",
+  NETLIFY: "NETLIFY",
+  HTML5: "HTML5",
+  HTML5_WHITE: "HTML5_WHITE",
+  CSS3: "CSS3",
+  CSS3_WHITE: "CSS3_WHITE",
   SINGULARITY_TITLE: "SINGULARITY_TITLE",
   TICTACGO_TITLE: "TICTACGO_TITLE",
   NOOR_TITLE: "NOOR_TITLE",
