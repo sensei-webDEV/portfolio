@@ -569,7 +569,7 @@ function App() {
               />
 
               {/* More projects.. */}
-              <section className="w-full flex flex-col space-y-5 justify-center items-center z-40 ">
+              <section className="w-full flex flex-col space-y-5 justify-center items-center z-999">
                 <a
                   href={LINKS.REPOS.MAIN}
                   target="_blank"

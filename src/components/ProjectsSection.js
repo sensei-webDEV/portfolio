@@ -118,7 +118,7 @@ const ProjectsSection = ({
       </div>
       {/* Background Dots */}
       <span
-        className="absolute z-0 flex flex-col space-y-4 text-black-200 font-black transform translate-y-72 translate-x-156 lg:translate-y-52 lg:translate-x-128 4xl:translate-y-96  4xl:left-156"
+        className="absolute z-10 flex flex-col space-y-4 text-black-200 font-black transform translate-y-72 translate-x-156 lg:translate-y-52 lg:translate-x-128 4xl:translate-y-96  4xl:left-156"
         style={{ fontSize: "750px", opacity: "3%" }}
       >
         {Icons(ICON_NAMES.DOTS, 220)}
