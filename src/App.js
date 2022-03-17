@@ -141,7 +141,7 @@ function App() {
               intersected ? "" : "animate-fade-in shadow-sm fixed 3xl:py-4"
             }`}
           >
-            <ul className="flex space-x-6 justify-center items-center text-sm 3xl:text-base 4xl:text-xl text-black-100 3xl:space-x-14">
+            <ul className="flex space-x-6 justify-center items-center text-sm 3xl:text-tiny 4xl:text-xl text-black-100 3xl:space-x-14">
               <li className="px-2.5 py-1 uppercase hover:underline">
                 <a href="#work">work</a>
               </li>
