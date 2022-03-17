@@ -600,31 +600,79 @@ function App() {
                     <span>& Tools</span>
                   </span>
                   {/* Icons */}
-                  <div className="flex w-2/3 h-96 flex-wrap items-center space-x-6 md:space-x-6 justify-evenly transform pr-2 scale-125 sm:pr-0 md:justify-evenly xl:px-10 xl:items-end xl:space-x-10">
-                    {Icons(ICON_NAMES.NODEJS_WHITE, 75)}
-                    {Icons(ICON_NAMES.EXPRESS_WHITE, 80)}
-                    {Icons(ICON_NAMES.MONGODB_WHITE, 90)}
-                    {Icons(ICON_NAMES.SOCKET_IO, 55)}
-                    {Icons(ICON_NAMES.PUPPETEER_WHITE, 30)}
-                    {Icons(ICON_NAMES.SEND_GRID, 80)}
-                    {Icons(ICON_NAMES.PASSPORT_WHITE, 30)}
-                    {Icons(ICON_NAMES.STRAPI, 60)}
-                    {Icons(ICON_NAMES.REDIS, 90)}
-                    {Icons(ICON_NAMES.POSTMAN, 100)}
-                    {Icons(ICON_NAMES.REACTJS, 45)}
-                    {Icons(ICON_NAMES.HTML5_WHITE, 29)}
-                    {Icons(ICON_NAMES.CSS3_WHITE, 29)}
-                    {Icons(ICON_NAMES.TAILWIND_WHITE, 85)}
-                    {Icons(ICON_NAMES.JAVASCRIPT, 38)}
-                    {Icons(ICON_NAMES.BOOTSTRAP, 45)}
-                    {Icons(ICON_NAMES.XD, 40)}
-                    {Icons(ICON_NAMES.ILLUSTRATOR, 40)}
-                    {Icons(ICON_NAMES.PHOTOSHOP, 40)}
-                    {Icons(ICON_NAMES.GITHUB, 30)}
-                    {Icons(ICON_NAMES.DIGITAL_OCEAN, 65)}
-                    {Icons(ICON_NAMES.AWS, 60)}
-                    {Icons(ICON_NAMES.HEROKU, 100)}
-                    {Icons(ICON_NAMES.NETLIFY_WHITE, 100)}
+                  <div className="flex w-2/3 h-96 flex-wrap items-center space-y-4 justify-evenly transform scale-125  md:justify-evenly xl:px-10 xl:items-end xl:space-x-10">
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.NODEJS_WHITE, 75)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.EXPRESS_WHITE, 80)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.MONGODB_WHITE, 90)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.SOCKET_IO, 55)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.PUPPETEER_WHITE, 30)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.SEND_GRID, 80)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.PASSPORT_WHITE, 30)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.STRAPI, 60)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.REDIS, 90)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.POSTMAN, 100)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.REACTJS, 45)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.HTML5_WHITE, 29)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.CSS3_WHITE, 29)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.TAILWIND_WHITE, 85)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.JAVASCRIPT, 38)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.BOOTSTRAP, 45)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.XD, 40)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.ILLUSTRATOR, 40)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.PHOTOSHOP, 40)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.GITHUB, 30)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.DIGITAL_OCEAN, 65)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.AWS, 60)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.HEROKU, 100)}
+                    </span>
+                    <span className="px-2 md:px-2.5 xl:px-3 2xl:px-4">
+                      {Icons(ICON_NAMES.NETLIFY_WHITE, 100)}
+                    </span>
                   </div>
                 </div>
                 <div className="-scroll-mt-96 xl:-scroll-mt-124" id="contact">
