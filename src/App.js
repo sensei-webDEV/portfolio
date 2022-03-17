@@ -361,13 +361,23 @@ function App() {
             </div>
 
             {/* Right-side container */}
-            <div className="hero-cards flex flex-col justify-center items-center lg:self-start xl:self-auto lg:pt-6 2xl:pt-0 2xl:pb-10 relative">
+            <div className="hero-cards flex flex-col justify-center items-center lg:self-center xl:self-auto lg:pt-6 2xl:pt-0 2xl:pb-10 relative">
               {/* Background Dots */}
               <span
-                className="absolute z-0 text-black-200 font-black scale-85 -left-8 -top-10 sm:left-0 sm:top-0 sm:scale-100"
+                className="absolute z-0 text-black-200 font-black scale-85 -left-8 -top-12 sm:left-0 sm:top-0 sm:scale-100 lg:-left-8 lg:scale-103"
                 style={{ fontSize: "750px", opacity: "3%" }}
               >
-                {Icons(ICON_NAMES.DOTS)}
+                <div
+                  className="flex flex-wrap justify-evenly items-center"
+                  style={{ width: "283px", height: "158px" }}
+                >
+                  {Array(88)
+                    .fill(null)
+                    .map((_, i) => (
+                      <div key={i} className="w-2 h-2 mx-2 bg-black-200" />
+                    ))}
+                </div>
+                {/* {Icons(ICON_NAMES.DOTS)} */}
               </span>
 
               <div className="px-19 py-2 max-w-lg sm:max-w-xl lg:px-2 lg:max-w-sm xl:max-w-md 4xl:px-14 4xl:max-w-2xl">
