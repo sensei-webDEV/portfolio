@@ -77,7 +77,7 @@ const ProjectsSection = ({
             aria-disabled
             className={`rounded-md flex justify-center text-white-200 items-center space-x-2.5 shadow-sm hover:bg-gradient-to-br hover:from-white-100 hover:to-white-200 hover:text-black-100 hover:scale-104 hover:font-medium hover:shadow-lg sm:space-x-4 ${
               links.primary.disabled
-                ? "cursor-not-allowed pointer-events-none bg-gray-200 text-white-100 opacity-80"
+                ? "cursor-not-allowed pointer-events-none bg-gray-200 text-white-100 opacity-50"
                 : "bg-black-100 text-white-200"
             }  px-4 pt-1 pb-1.5 sm:px-4 lg:px-4 xl:px-6 4xl:pb-2.5`}
             href={links.primary.url}
