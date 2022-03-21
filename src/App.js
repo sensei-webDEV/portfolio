@@ -703,7 +703,7 @@ function App() {
                     <span>Whatsapp</span>
                     <span>{Icons(ICON_NAMES.WHATSAPP, 18)}</span>
                   </a>
-                  <a href="tel:+971589978970">+971 524 527 823</a>
+                  <a href="tel:+971524527823">+971 524 527 823</a>
                   <span className="font-medium">Meshari Sulaiman</span>
                 </div>
               </section>
