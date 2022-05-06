@@ -462,9 +462,9 @@ function App() {
                 color="pink"
                 links={{
                   primary: {
-                    label: "Finishing touches..",
-                    url: "",
-                    disabled: true,
+                    label: "singularity.events",
+                    url: "https://singularity.events",
+                    disabled: false,
                   },
                   secondary: {
                     label: "GitHub repo ",
