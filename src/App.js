@@ -11,6 +11,7 @@ import MobileStepper from "@mui/material/MobileStepper";
 import Theme from "./Theme";
 import TEXTS from "./content/texts";
 import LINKS from "./content/links";
+import CONTACT from "./content/contact";
 import ProjectsSection from "./components/ProjectsSection";
 import SideMenu from "./components/SideMenu";
 import useScrollbarSize from "react-scrollbar-size";
@@ -692,18 +693,18 @@ function App() {
                   Contact
                 </div>
                 <div className="flex flex-col text-xl text-black-100 justify-center items-center 4xl:text-4xl">
-                  <a href="mailto:meshari@meshu-web.dev">
-                    contact@meshu-web.dev
-                  </a>
+                  <a href={`mailto:${CONTACT.EMAIL}`}>{CONTACT.EMAIL}</a>
                   <a
                     target="_blank"
                     className="flex justify-center items-center space-x-2"
-                    href="https://wa.me/966537926819"
+                    href={`https://wa.me/${CONTACT.WHATSAPP_NUMBER}`}
                   >
                     <span>Whatsapp</span>
                     <span>{Icons(ICON_NAMES.WHATSAPP, 18)}</span>
                   </a>
-                  <a href="tel:+971524527823">+971 582 820 100</a>
+                  <a href={`tel:${CONTACT.PHONE_NUMBER}`}>
+                    +{CONTACT.PHONE_NUMBER.match(/.{1,3}/g).join(" ")}
+                  </a>
                   <span className="font-medium">Meshari Sulaiman</span>
                 </div>
               </section>
