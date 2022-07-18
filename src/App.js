@@ -702,7 +702,7 @@ function App() {
                     <span>Whatsapp</span>
                     <span>{Icons(ICON_NAMES.WHATSAPP, 18)}</span>
                   </a>
-                  <a href={`tel:${CONTACT.PHONE_NUMBER}`}>
+                  <a href={`tel:+${CONTACT.PHONE_NUMBER}`}>
                     +{CONTACT.PHONE_NUMBER.match(/.{1,3}/g).join(" ")}
                   </a>
                   <span className="font-medium">Meshari Sulaiman</span>
