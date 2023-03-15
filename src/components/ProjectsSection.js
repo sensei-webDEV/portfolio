@@ -81,7 +81,6 @@ const ProjectsSection = ({
                 : "bg-black-100 text-white-200"
             }  px-4 pt-1 pb-1.5 sm:px-4 lg:px-4 xl:px-6 4xl:pb-2.5`}
             href={links.primary.url}
-            without
             rel="noreferrer"
             target="_blank"
           >
@@ -101,7 +100,6 @@ const ProjectsSection = ({
           <a
             className="underline text-black-100 text-sm xl:text-tiny 4xl:text-lg 2xl:font-medium bg-opacity-10 rounded-sm shadow-sm px-2 py-1"
             href={links.secondary.url}
-            without
             rel="noreferrer"
             target="_blank"
           >

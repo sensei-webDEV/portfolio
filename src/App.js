@@ -157,7 +157,7 @@ function App() {
                 <a href="#contact">contact</a>
               </li>
               <li className="px-2.5 py-1 uppercase hover:underline">
-                <a href="/Resume.pdf" download>
+                <a href="/Resume-Meshari Sulaiman.pdf" download>
                   <div className="flex justify-center items-center space-x-2">
                     <span>resume</span>
                     <svg
@@ -244,10 +244,10 @@ function App() {
                         data-name="Design"
                         transform="translate(1719 -1790)"
                         fill="#fff"
-                        font-size="25"
-                        font-family="Poppins-Medium, Poppins"
-                        font-weight="500"
-                        letter-spacing="0.024em"
+                        fontSize="25"
+                        fontFamily="Poppins-Medium, Poppins"
+                        fontWeight="500"
+                        letterSpacing="0.024em"
                       >
                         <tspan x="0" y="0">
                           Design
@@ -302,10 +302,10 @@ function App() {
                         id="Develop"
                         transform="translate(397 676)"
                         fill="#fff"
-                        font-size="25"
-                        font-family="Poppins-Medium, Poppins"
-                        font-weight="500"
-                        letter-spacing="0.024em"
+                        fontSize="25"
+                        fontFamily="Poppins-Medium, Poppins"
+                        fontWeight="500"
+                        letterSpacing="0.024em"
                       >
                         <tspan x="0" y="0">
                           Develop
@@ -343,10 +343,10 @@ function App() {
                         id="Deploy"
                         transform="translate(607 675)"
                         fill="#fff"
-                        font-size="25"
-                        font-family="Poppins-Medium, Poppins"
-                        font-weight="500"
-                        letter-spacing="0.024em"
+                        fontSize="25"
+                        fontFamily="Poppins-Medium, Poppins"
+                        fontWeight="500"
+                        letterSpacing="0.024em"
                       >
                         <tspan x="0" y="0">
                           Deploy
@@ -515,8 +515,9 @@ function App() {
                 ]}
                 links={{
                   primary: {
-                    label: "tic-tac-go.com",
+                    label: "Migrating from Heroku to Render",
                     url: LINKS.WEBSITES.TIC_TAC_GO,
+                    disabled: true,
                   },
                   secondary: {
                     label: "GitHub repo ",
@@ -553,8 +554,9 @@ function App() {
                 ]}
                 links={{
                   primary: {
-                    label: "noor-scraper.com",
+                    label: "Migrating from Heroku to Render",
                     url: LINKS.WEBSITES.NOOR_SCRAPER,
+                    disabled: true,
                   },
                   secondary: {
                     label: "GitHub repo ",
