@@ -16,6 +16,9 @@ import ProjectsSection from "./components/ProjectsSection";
 import SideMenu from "./components/SideMenu";
 import useScrollbarSize from "react-scrollbar-size";
 
+import resumeFile from "./assets/Resume-Meshari-Sulaiman.pdf";
+import { PUBLIC_URL } from "./env.js"; // import the PUBLIC_URL variable
+
 // Images
 const SingularityMockupSVG = lazy(() =>
   import("./components/SingularityMockupSVG")
@@ -84,6 +87,15 @@ function App() {
     if (windowWidth >= 440) return false;
     return true;
   };
+
+  function downloadResume() {
+    const link = document.createElement("a");
+    link.href = `${PUBLIC_URL}${resumeFile}`;
+    link.download = "Resume-Meshari-Sulaiman.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", (e) => handleNavigation(e));
@@ -157,7 +169,7 @@ function App() {
                 <a href="#contact">contact</a>
               </li>
               <li className="px-2.5 py-1 uppercase hover:underline">
-                <a href="/Resume-Meshari Sulaiman.pdf" download>
+                <a href="/Resume-Meshari-Sulaiman.pdf" download>
                   <div className="flex justify-center items-center space-x-2">
                     <span>resume</span>
                     <svg
