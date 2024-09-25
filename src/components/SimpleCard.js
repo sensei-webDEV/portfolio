@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Card = ({ title = '', content, icons = [], stripeText, right = null, left = null, condensed = false }) => {
+const SimpleCard = ({ title = '', content, icons = [], stripeText, right = null, left = null, condensed = false }) => {
   return (
-    <div className='relative card-container flex flex-col space-y-4 items-center justify-between px-8 py-8 m-5 rounded-md bg-white-100 drop-shadow-md lg:h-119 4xl:h-126 4xl:w-[92%]'>
+    <div className='relative card-container flex flex-col items-center justify-start px-8 py-8 m-5 rounded-md bg-white-100 drop-shadow-md lg:h-119 4xl:h-126 4xl:w-[92%]'>
       {/* Stripe */}
-      <div className='stripe absolute transform h-7 w-40 px-3 flex justify-start items-center text-sm font-poppins font-normal text-white-100 bg-teal-200 rotate-90 top-12 -left-20 '>{stripeText}</div>
+      <div className='stripe absolute transform h-[33%] px-[1px] flex justify-start items-center text-sm font-poppins font-normal text-white-100 bg-black-100/70 -left-[0px] top-0'>{stripeText}</div>
 
       {/* Arrows */}
       {right && (
@@ -27,24 +27,28 @@ const Card = ({ title = '', content, icons = [], stripeText, right = null, left 
       )}
 
       {/* title */}
-      <div className='title px-3'>{title}</div>
+      {title && <div className='title text-black-100/85 self-start text-3xl font-tiempos font-black tracking-widest px-3 leading-tight'>{title}</div>}
 
       {/* Description */}
-      <div
-        className='content font-poppins font-normal text-base leading-snug tracking-normal text-justify hyphens-manual pt-2 px-3.5 lg:text-xs 3.5xl:text-sm 4xl:text-tiny'
-        dangerouslySetInnerHTML={{ __html: content }}></div>
+      {content && (
+        <div
+          className='content font-poppins font-normal text-base leading-snug text-justify hyphens-auto px-1 lg:text-tiny 3.5xl:text-sm 4xl:text-tiny'
+          dangerouslySetInnerHTML={{ __html: content }}></div>
+      )}
 
       {/* Footer */}
-      <div className='footer max-h-8 4xl:max-h-16 w-full flex filter grayscale justify-evenly items-end overflow-y-hidden'>
-        {icons.map((icon, i) => (
-          <span key={i}>{icon}</span>
-        ))}
-        <a href='#technologies' className='font-tiempos font-black underline tracking-widest'>
-          ...
-        </a>
-      </div>
+      {icons.length > 0 && (
+        <div className='footer mt-10 max-h-8 4xl:max-h-16 w-full flex filter grayscale justify-evenly items-end overflow-y-hidden'>
+          {icons.map((icon, i) => (
+            <span key={i}>{icon}</span>
+          ))}
+          <a href='#technologies' className='font-tiempos font-black underline tracking-widest'>
+            ...
+          </a>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Card;
+export default SimpleCard;
