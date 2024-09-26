@@ -144,9 +144,9 @@ function App() {
           {/* Hero */}
           <section className='hero relative selection:bg-teal-100 px-4 flex flex-col justify-between items-center leading-none text-black-100 sm:pt-4 md:pt-8 lg:justify-between lg:px-22 lg:flex-row lg-justify-center lg:items-center lg:h-screen lg:pt-10 xl:px-[10vw] 2xl:px-[12vw] 2xl:pt-0 3.5xl:px-64 4xl:px-80'>
             {/* hero-copy */}
-            <div className='hero-text grow w-full flex flex-col h-[68vh] lg:h-full mt-16 items-center justify-center space-y-12 sm:pb-22 md:items-start lg:pl-4 xl:h-auto'>
+            <div className='hero-text grow w-fit lg:w-full flex flex-col h-[68vh] lg:h-full mt-16 items-center justify-center space-y-12 sm:pb-22 md:items-start lg:pl-4 xl:h-auto'>
               {/* Text  */}
-              <div className='Text flex flex-col w-full'>
+              <div className='Text flex flex-col w-fit whitespace-nowrap'>
                 <h4 className='text-base font-medium tracking-wider leading-tight mb-6 font-tiempos self-start sm:text-lg lg:text-base 2xl:text-xl 4xl:text-4xl 3xl:text-2xl'>
                   Technical Lead <strong>/</strong>
                   <br /> Creative Technologist
@@ -155,10 +155,6 @@ function App() {
                   Meshari
                 </h1>
                 <div className='flex ml-1 sm:ml-0 flex-col space-y-1.5 text-base font-tiempos self-start py-1'>
-                  {/* <h4 className='text-base self-start font-semibold tracking-wide leading-tight sm:text-lg lg:text-base lg:text-right 2xl:text-xl 4xl:text-4xl 3xl:text-2xl'>
-                    Bridging the gap between creativity and technology to deliver innovative digital experiences.
-                  </h4>
-                    */}
                   <div className='text-[14px] font-light leading-tight flex flex-col space-y-1 2xl:text-base 4xl:text-lg'>Fullstack TypeScript & JavaScript</div>
                 </div>
               </div>
@@ -186,21 +182,23 @@ function App() {
                       </tspan>
                     </text>
                     <rect x='21' y='154' width='108' height='26' fill='#060B43' />
-                    <text fill='white' xmlSpace='preserve' style={{ whiteSpace: 'pre' }} fontFamily='Poppins' fontSize='13' letterSpacing='0em' fontWeight={600}>
-                      <tspan x='35' y='171'>
-                        Contact me
-                      </tspan>
-                    </text>
+                    <a href='#contact' className='text-white-100 bg-teal-100 w-10 h-10'>
+                      <text fill='white' xmlSpace='preserve' style={{ whiteSpace: 'pre' }} fontFamily='Poppins' fontSize='13' letterSpacing='0em' fontWeight={600}>
+                        <tspan x='35' y='171' className='text-white-100'>
+                          Contact me
+                        </tspan>
+                      </text>
+                    </a>
                   </svg>
                 </div>
               </div>
             </div>
             {/* summary for desktop */}
-            <div className='hidden lg:flex justify-center items-center grow h-full summary w-full bg-white-200'>
+            <div className='hidden md:flex justify-center items-center grow h-full summary w-full bg-white-200'>
               {/* Background Summary floating text */}
-              <div className='flex flex-col space-y-80 scroll-mt-72 2xl:scroll-mt-80' id='summary'>
+              <div className='flex flex-col w-full space-y-80 scroll-mt-72 2xl:scroll-mt-80' id='summary'>
                 {/* Summary */}
-                <div className='hero-cards flex flex-col justify-center items-center lg:self-center xl:self-auto lg:pt-6 2xl:pt-0 2xl:pb-10 relative'>
+                <div className='hero-cards flex flex-col justify-center items-center h-auto lg:self-center xl:self-auto lg:pt-6 2xl:pt-0 2xl:pb-10 relative'>
                   {/* Background Dots */}
                   <span className='absolute z-0 text-black-200 font-black scale-85 -left-8 -top-6 sm:left-0 sm:top-0 sm:scale-100 lg:-left-8 lg:scale-103' style={{ fontSize: '750px', opacity: '3%' }}>
                     <div className='flex flex-wrap justify-evenly items-center' style={{ width: '283px', height: '158px' }}>
@@ -213,47 +211,11 @@ function App() {
                     {/* {Icons(ICON_NAMES.DOTS)} */}
                   </span>
 
-                  <div className='py-2 px-3 w-[100vw] sm:max-w-xl lg:px-2 lg:max-w-sm xl:max-w-md 4xl:px-14 4xl:max-w-2xl'>
-                    <AutoPlaySwipeableViews interval={12000} axis={'x'} index={activeStep} onChangeIndex={handleStepChange}>
-                      <div className='py-2 px-3 w-[100vw] sm:max-w-xl lg:px-2 lg:max-w-[430px] 4xl:px-14 4xl:max-w-2xl'>
-                        <SimpleCard title='SUMMARY' content={TEXTS.SUMMARY_CONTENT.en} stripeText='' right={handleNext} />
-                      </div>
-                      <Card
-                        title={Icons(ICON_NAMES.TECH_LEAD_TITLE, 285)}
-                        content={TEXTS.LEADERSHIP_CONTENT.en}
-                        stripeText='Leadership'
-                        right={handleNext}
-                        left={handleBack}
-                        icons={[Icons(ICON_NAMES.JIRA, 52), Icons(ICON_NAMES.CONFLUENCE, 52), Icons(ICON_NAMES.BITBUCKET, 64)]}
-                      />
-                      <Card
-                        title={Icons(ICON_NAMES.BACKEND_TITLE, 250)}
-                        content={TEXTS.BACKEND_CONTENT.en}
-                        stripeText='Development'
-                        right={handleNext}
-                        left={handleBack}
-                        icons={[Icons(ICON_NAMES.NODEJS, 52), Icons(ICON_NAMES.EXPRESS, 52), Icons(ICON_NAMES.MONGODB, 64)]}
-                      />
-                      <Card
-                        title={Icons(ICON_NAMES.FRONTEND_TITLE, 250)}
-                        content={TEXTS.FRONTEND_CONTENT.en}
-                        stripeText='Development'
-                        right={handleNext}
-                        left={handleBack}
-                        icons={[Icons(ICON_NAMES.REACTJS, 36), Icons(ICON_NAMES.JAVASCRIPT, 39), Icons(ICON_NAMES.TAILWIND, 60)]}
-                      />
-                      <Card
-                        title={Icons(ICON_NAMES.UIUX_TITLE, 150)}
-                        condensed
-                        content={TEXTS.UIUX_CONTENT.en}
-                        stripeText='Design'
-                        left={handleBack}
-                        icons={[Icons(ICON_NAMES.XD, 30), Icons(ICON_NAMES.ILLUSTRATOR, 30), Icons(ICON_NAMES.PHOTOSHOP, 30)]}
-                      />
-                    </AutoPlaySwipeableViews>
+                  <div className='py-0 my-20 px-3 w-[100vw] sm:w-fit'>
+                    <div className='py-2 px-3 w-[100vw] sm:w-fit lg:px-2 4xl:px-14 4xl:max-w-2xl'>
+                      <SimpleCard title='SUMMARY' content={TEXTS.SUMMARY_CONTENT.en} stripeText='' />
+                    </div>
                   </div>
-
-                  <MobileStepper steps={maxSteps} position='static' activeStep={activeStep} />
                 </div>
               </div>
             </div>
@@ -264,7 +226,35 @@ function App() {
               M
             </span>
           </section>
-          <section className='lg:hidden summary w-full bg-white-200 mt-[255px]'>
+          <section className='hidden md:flex justify-center items-start h-full max-w-[70vw] flex-wrap mx-auto gap-[10vw] lg:gap-[8vw]'>
+            <Card
+              title={Icons(ICON_NAMES.TECH_LEAD_TITLE, 285)}
+              content={TEXTS.LEADERSHIP_CONTENT.en}
+              stripeText='Leadership'
+              icons={[Icons(ICON_NAMES.JIRA, 52), Icons(ICON_NAMES.CONFLUENCE, 52), Icons(ICON_NAMES.BITBUCKET, 64)]}
+            />
+            <Card
+              title={Icons(ICON_NAMES.BACKEND_TITLE, 250)}
+              content={TEXTS.BACKEND_CONTENT.en}
+              stripeText='Development'
+              icons={[Icons(ICON_NAMES.NODEJS, 52), Icons(ICON_NAMES.EXPRESS, 52), Icons(ICON_NAMES.MONGODB, 64)]}
+            />
+            <Card
+              title={Icons(ICON_NAMES.FRONTEND_TITLE, 250)}
+              content={TEXTS.FRONTEND_CONTENT.en}
+              stripeText='Development'
+              icons={[Icons(ICON_NAMES.REACTJS, 36), Icons(ICON_NAMES.JAVASCRIPT, 39), Icons(ICON_NAMES.TAILWIND, 60)]}
+            />
+            <Card
+              title={Icons(ICON_NAMES.UIUX_TITLE, 150)}
+              condensed
+              content={TEXTS.UIUX_CONTENT.en}
+              stripeText='Design'
+              icons={[Icons(ICON_NAMES.XD, 30), Icons(ICON_NAMES.ILLUSTRATOR, 30), Icons(ICON_NAMES.PHOTOSHOP, 30)]}
+            />
+          </section>
+          {/* Summary for mobile */}
+          <section className='block md:hidden h-full summary w-full bg-white-200 mt-[255px]'>
             {/* Background Summary floating text */}
             <Parallax speed={7}>
               <span
@@ -295,7 +285,7 @@ function App() {
             </div>
           </section>
           {/* Skills */}
-          <section className='work w-full bg-white-200 mt-[255px]'>
+          <section className='work w-full bg-white-200 mt-[255px] xl:mt-[175px]'>
             {/* Background Work floating text */}
             <Parallax speed={7} className='lg:hidden'>
               <span
@@ -316,23 +306,23 @@ function App() {
                         <div key={i} className='w-2 h-2 mx-2 bg-black-200' />
                       ))}
                   </div>
-                  {/* {Icons(ICON_NAMES.DOTS)} */}
                 </span>
 
-                <div className='py-2 px-3 w-[100vw] sm:max-w-xl lg:px-2 lg:max-w-sm xl:max-w-md 4xl:px-14 4xl:max-w-2xl'>
+                <div className='md:hidden py-2 px-3 w-[100vw] sm:max-w-xl lg:px-2 lg:max-w-sm xl:max-w-md 4xl:px-14 4xl:max-w-2xl'>
                   <AutoPlaySwipeableViews interval={1200000} axis={'x'} index={activeStep} onChangeIndex={handleStepChange}>
                     <Card
                       title={Icons(ICON_NAMES.TECH_LEAD_TITLE, 285)}
                       content={TEXTS.LEADERSHIP_CONTENT.en}
                       stripeText='Leadership'
                       right={handleNext}
-                      icons={[Icons(ICON_NAMES.JIRA, 52), Icons(ICON_NAMES.CONFLUENCE, 52), Icons(ICON_NAMES.BITBUCKET, 64)]}
+                      icons={[Icons(ICON_NAMES.JIRA, 38), Icons(ICON_NAMES.CONFLUENCE, 38), Icons(ICON_NAMES.BITBUCKET, 38)]}
                     />
                     <Card
                       title={Icons(ICON_NAMES.BACKEND_TITLE, 250)}
                       content={TEXTS.BACKEND_CONTENT.en}
                       stripeText='Development'
                       right={handleNext}
+                      left={handleBack}
                       icons={[Icons(ICON_NAMES.NODEJS, 52), Icons(ICON_NAMES.EXPRESS, 52), Icons(ICON_NAMES.MONGODB, 64)]}
                     />
                     <Card
@@ -349,6 +339,7 @@ function App() {
                       content={TEXTS.UIUX_CONTENT.en}
                       stripeText='Design'
                       left={handleBack}
+                      right={handleNext}
                       icons={[Icons(ICON_NAMES.XD, 30), Icons(ICON_NAMES.ILLUSTRATOR, 30), Icons(ICON_NAMES.PHOTOSHOP, 30)]}
                     />
                   </AutoPlaySwipeableViews>
@@ -379,33 +370,33 @@ function App() {
                   </span>
                   {/* Icons */}
                   <div className='flex w-2/3 h-96 flex-wrap items-center space-y-4 justify-evenly transform scale-125  md:justify-evenly xl:px-10 xl:items-end xl:space-x-10'>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.NODEJS_WHITE, 75)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.EXPRESS_WHITE, 80)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.MONGODB_WHITE, 90)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.SOCKET_IO, 55)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.PUPPETEER_WHITE, 30)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.SEND_GRID, 80)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.PASSPORT_WHITE, 30)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.STRAPI, 60)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.REDIS, 90)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.POSTMAN, 100)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.REACTJS, 45)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.HTML5_WHITE, 29)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.CSS3_WHITE, 29)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.TAILWIND_WHITE, 85)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.JAVASCRIPT, 38)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.BOOTSTRAP, 45)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.XD, 40)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.ILLUSTRATOR, 40)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.PHOTOSHOP, 40)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.GITHUB, 30)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.BITBUCKET, 55)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.JIRA, 45)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.CONFLUENCE, 43)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.DIGITAL_OCEAN, 65)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.AWS, 60)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.HEROKU, 100)}</span>
-                    <span className='px-2 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.NETLIFY_WHITE, 100)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.NODEJS_WHITE, 75)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.EXPRESS_WHITE, 80)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.MONGODB_WHITE, 90)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.SOCKET_IO, 55)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.PUPPETEER_WHITE, 30)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.SEND_GRID, 80)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.PASSPORT_WHITE, 30)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.STRAPI, 60)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.REDIS, 90)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.POSTMAN, 100)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.REACTJS, 45)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.HTML5_WHITE, 29)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.CSS3_WHITE, 29)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.TAILWIND_WHITE, 85)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.JAVASCRIPT, 38)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.BOOTSTRAP, 45)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.XD, 40)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.ILLUSTRATOR, 40)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.PHOTOSHOP, 40)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.GITHUB, 30)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.BITBUCKET, 38)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.JIRA, 35)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.CONFLUENCE, 38)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.DIGITAL_OCEAN, 65)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.AWS, 60)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.HEROKU, 100)}</span>
+                    <span className='px-2.5 md:px-2.5 xl:px-3 2xl:px-4'>{Icons(ICON_NAMES.NETLIFY_WHITE, 100)}</span>
                   </div>
                 </div>
                 <div className='-scroll-mt-96 xl:-scroll-mt-124' id='contact'>

@@ -32,7 +32,7 @@ const SimpleCard = ({ title = '', content, icons = [], stripeText, right = null,
       {/* Description */}
       {content && (
         <div
-          className='simple-card-content text-black-100 max-w-[55ch] font-poppins font-normal text-base text-left leading-normal text-pretty tracking-wide px-1 lg:text-tiny 3.5xl:text-sm 4xl:text-tiny'
+          className='simple-card-content text-black-100 max-w-[55ch] font-poppins font-normal text-base text-left leading-normal text-pretty tracking-wide px-1 lg:py-2'
           dangerouslySetInnerHTML={{ __html: content }}></div>
       )}
 
