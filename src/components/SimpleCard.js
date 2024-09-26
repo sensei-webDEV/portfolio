@@ -2,7 +2,7 @@ import React from 'react';
 
 const SimpleCard = ({ title = '', content, icons = [], stripeText, right = null, left = null, condensed = false }) => {
   return (
-    <div className='relative card-container flex flex-col items-center justify-start px-8 py-8 m-5 rounded-md bg-white-100 drop-shadow-md lg:h-119 4xl:h-126 4xl:w-[92%]'>
+    <div className='relative card-container flex flex-col items-center justify-start px-6 py-8 m-5 rounded-md bg-white-100 drop-shadow-md lg:h-119 4xl:h-126 4xl:w-[92%]'>
       {/* Stripe */}
       <div className='stripe absolute transform h-[33%] px-[1px] flex justify-start items-center text-sm font-poppins font-normal text-white-100 bg-black-100/70 -left-[0px] top-0'>{stripeText}</div>
 
@@ -32,7 +32,7 @@ const SimpleCard = ({ title = '', content, icons = [], stripeText, right = null,
       {/* Description */}
       {content && (
         <div
-          className='content font-poppins font-normal text-base leading-snug text-justify hyphens-auto px-1 lg:text-tiny 3.5xl:text-sm 4xl:text-tiny'
+          className='simple-card-content text-black-100 max-w-[55ch] font-poppins font-normal text-base text-left leading-normal text-pretty tracking-wide px-1 lg:text-tiny 3.5xl:text-sm 4xl:text-tiny'
           dangerouslySetInnerHTML={{ __html: content }}></div>
       )}
 

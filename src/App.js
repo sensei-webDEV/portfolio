@@ -151,7 +151,9 @@ function App() {
                   Technical Lead <strong>/</strong>
                   <br /> Creative Technologist
                 </h4>
-                <h1 className='text-[90px] sm:pb-0 whitespace-nowrap font-tiempos font-black leading-[0.85] flex-grow-0 max-w-min sm:text-11xl md:text-9xl 3xl:text-10xl 4xl:text-17xl'>Meshari</h1>
+                <h1 className='text-[90px] sm:pb-0 whitespace-nowrap font-tiempos font-black leading-[0.85] tracking-tight flex-grow-0 max-w-min sm:text-11xl md:text-9xl 3xl:text-10xl 4xl:text-17xl'>
+                  Meshari
+                </h1>
                 <div className='flex ml-1 sm:ml-0 flex-col space-y-1.5 text-base font-tiempos self-start py-1'>
                   {/* <h4 className='text-base self-start font-semibold tracking-wide leading-tight sm:text-lg lg:text-base lg:text-right 2xl:text-xl 4xl:text-4xl 3xl:text-2xl'>
                     Bridging the gap between creativity and technology to deliver innovative digital experiences.

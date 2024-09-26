@@ -31,7 +31,7 @@ const Card = ({ title = '', content, icons = [], stripeText, right = null, left 
 
       {/* Description */}
       <div
-        className='content font-poppins font-normal text-base leading-snug tracking-normal text-justify hyphens-manual pt-2 px-3.5 lg:text-xs 3.5xl:text-sm 4xl:text-tiny'
+        className='content max-w-[30ch] font-poppins font-normal text-base leading-snug tracking-wide text-justify hyphens-auto pt-2 px-1 lg:text-xs 3.5xl:text-sm 4xl:text-tiny'
         dangerouslySetInnerHTML={{ __html: content }}></div>
 
       {/* Footer */}
