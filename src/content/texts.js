@@ -1,6 +1,9 @@
 const texts = {
   SUMMARY_CONTENT: {
-    en: '<span class="font-medium">Technical Lead and Creative Technologist</span> with 7 years of experience in the JavaScript and TypeScript ecosystem, back-end and front-end development. Experienced in leading digital projects for brands, activations, promotions, consumer data collection, and interactive experiences. Provide digital direction, managing small teams, handling quoting and head hour estimates, and creating scalable digital solutions. Responsible and quick to take ownership.',
+    en: 'Technical Lead and Creative Technologist',
+  },
+  SUMMARY_SUB_CONTENT: {
+    en: `With 7 years of experience in the Javascript and Typescript ecosys\u00ADtem, full-stack web and app\u00ADlication developments. Leading and managing development teams, making tech\u00ADnical decisions, cross-functional collaborations to create innovative digital experiences.\n\nDelivered solutions such as e\u00ADcommerce platforms, loyalty and consumer retention mobile apps, gamified & creative microsites, digital campaigns and installations, and provide project quoting and head hour estimates.\n\nResponsible and quick to take ownership.`,
   },
   LEADERSHIP_CONTENT: {
     en: 'Leading projects and providing technical direction for digital solutions. Building and delivering high-quality front-end and back-end solutions. Managing a team of full-stack and app developers, quoting and head hour estimates. Expertise in various frameworks and libraries.',

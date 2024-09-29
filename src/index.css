@@ -30,12 +30,23 @@
 
 .palette-gradient {
   background: rgb(75, 230, 201);
-  background: linear-gradient(324deg, rgba(75, 230, 201, 1) 0%, rgba(253, 115, 130, 1) 50%, rgba(124, 73, 233, 1) 100%);
+  background: linear-gradient(
+    324deg,
+    rgba(75, 230, 201, 1) 0%,
+    rgba(253, 115, 130, 1) 50%,
+    rgba(124, 73, 233, 1) 100%
+  );
 }
 
 .to-transparent-bg {
   background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(38, 44, 61, 0) 14%, rgba(5, 11, 31, 1) 15%, rgba(5, 11, 31, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(38, 44, 61, 0) 14%,
+    rgba(5, 11, 31, 1) 15%,
+    rgba(5, 11, 31, 1) 100%
+  );
 }
 /* @font-face {
   font-family: "GothamHTF";
@@ -82,36 +93,109 @@
 
 @font-face {
   font-family: 'Tiempos';
-  src: local('Tiempos'), url('./fonts/TiemposHeadlineTest-light.otf') format('woff');
+  src: local('Tiempos'),
+    url('./fonts/TiemposHeadlineTest-light.otf') format('woff');
   font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Tiempos';
-  src: local('Tiempos'), url('./fonts/TiemposHeadlineTest-Regular.otf') format('woff');
+  src: local('Tiempos'),
+    url('./fonts/TiemposHeadlineTest-Regular.otf') format('woff');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tiempos';
-  src: local('Tiempos'), url('./fonts/TiemposHeadlineTest-Medium.otf') format('woff');
+  src: local('Tiempos'),
+    url('./fonts/TiemposHeadlineTest-Medium.otf') format('woff');
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tiempos';
-  src: local('Tiempos'), url('./fonts/TiemposHeadlineTest-Bold.otf') format('woff');
+  src: local('Tiempos'),
+    url('./fonts/TiemposHeadlineTest-Bold.otf') format('woff');
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: 'Tiempos';
-  src: local('Tiempos'), url('./fonts/TiemposHeadlineTest-Black.otf') format('woff');
+  src: local('Tiempos'),
+    url('./fonts/TiemposHeadlineTest-Black.otf') format('woff');
   font-weight: 900;
   font-display: swap;
 }
 
-/* body {
-  background-color: #f8f8f8;
-} */
+.animate-wiggle {
+  -webkit-animation: wiggle 1s ease-in-out 3s both;
+  animation: wiggle 1s ease-in-out 3s both;
+}
+
+@-webkit-keyframes wiggle {
+  0%,
+  100% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(0deg);
+    transform: translateX(50%) translateY(-50%) rotate(0deg);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+  }
+  10% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(2deg);
+    transform: translateX(50%) translateY(-50%) rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(-4deg);
+    transform: translateX(50%) translateY(-50%) rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(4deg);
+    transform: translateX(50%) translateY(-50%) rotate(4deg);
+  }
+  80% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(-2deg);
+    transform: translateX(50%) translateY(-50%) rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(2deg);
+    transform: translateX(50%) translateY(-50%) rotate(2deg);
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(0deg);
+    transform: translateX(50%) translateY(-50%) rotate(0deg);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+  }
+  10% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(2deg);
+    transform: translateX(50%) translateY(-50%) rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(-4deg);
+    transform: translateX(50%) translateY(-50%) rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(4deg);
+    transform: translateX(50%) translateY(-50%) rotate(4deg);
+  }
+  80% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(-2deg);
+    transform: translateX(50%) translateY(-50%) rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: translateX(50%) translateY(-50%) rotate(2deg);
+    transform: translateX(50%) translateY(-50%) rotate(2deg);
+  }
+}
