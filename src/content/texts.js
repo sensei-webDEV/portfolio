@@ -3,7 +3,7 @@ const texts = {
     en: 'Technical Lead and Creative Technologist',
   },
   SUMMARY_SUB_CONTENT: {
-    en: `With 7 years of experience in the Javascript and Typescript ecosys\u00ADtem, full-stack web and app\u00ADlication developments. Leading and managing development teams, making tech\u00ADnical decisions, cross-functional collaborations to create innovative digital experiences.\n\nDelivered solutions such as e\u00ADcommerce platforms, loyalty and consumer retention mobile apps, gamified & creative microsites, digital campaigns and installations, and provide project quoting and head hour estimates.\n\nResponsible and quick to take ownership.`,
+    en: `With 7 years of experience in the JavaScript and TypeScript ecosystem. Managing and leading full-stack web and mobile application development teams, making key technical decisions and driving cross-functional collaborations to create innovative digital solutions.\n\nDelivered a wide range of solutions such as e-commerce platforms, loyalty and consumer retention mobile apps, customer engagement platforms, gamified & creative microsites, digital campaigns & installations. Provide project quotes, timelines, and head-hour estimates to ensure efficient project planning and execution.\n\nIncorporating AI tools like Claude AI, ChatGPT, and Copilot to enhance workflow and efficiency.\n\nResponsible, competent, and quick to take ownership`,
   },
   LEADERSHIP_CONTENT: {
     en: 'Leading projects and providing technical direction for digital solutions. Building and delivering high-quality front-end and back-end solutions. Managing a team of full-stack and app developers, quoting and head hour estimates. Expertise in various frameworks and libraries.',
